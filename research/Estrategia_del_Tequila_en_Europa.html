@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Estrategia del Tequila para Conquistar Europa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F5F2;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #d45087;
+        }
+        .flow-arrow {
+            content: '→';
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #ff7c43;
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F5F2] text-[#2C3E50]">
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#003f5c] mb-4">Conquistando el Continente</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-[#2f4b7c]">Un plan estratégico para el renacimiento del tequila premium en Europa, transformando la percepción de "fiesta" a "sofisticación".</p>
+        </header>
+
+        <section id="market-contradiction" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#003f5c]">La Encrucijada del Mercado</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12">Mientras el tequila vive una época dorada a nivel global, Europa presenta una alarmante caída. La oportunidad no está en el producto, sino en la estrategia.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="kpi-card">
+                    <h3 class="text-2xl font-bold mb-2 text-[#2f4b7c]">Crecimiento Global</h3>
+                    <p class="text-5xl font-bold text-[#665191]">+5.48%</p>
+                    <p class="text-sm text-gray-500">CAGR Proyectada 2024-2029</p>
+                </div>
+                <div class="kpi-card border-4 border-red-500">
+                    <h3 class="text-2xl font-bold mb-2 text-[#d45087]">Exportaciones a Europa</h3>
+                    <p class="text-5xl font-bold text-[#d45087]">-23%</p>
+                    <p class="text-sm text-gray-500">Caída drástica en el último año</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-2xl font-bold mb-2 text-[#2f4b7c]">Espirituosos Artesanales EU</h3>
+                    <p class="text-5xl font-bold text-[#ff7c43]">+12.66%</p>
+                    <p class="text-sm text-gray-500">CAGR Proyectada 2024-2029</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="key-markets" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#003f5c]">El Campo de Batalla Europeo</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12">España y Alemania lideran el consumo, pero cada mercado presenta desafíos y oportunidades únicas. La estrategia debe ser quirúrgica, no generalista.</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="chart-container h-[450px] md:h-[500px]">
+                    <canvas id="europeanMarketsChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-4">La gráfica muestra el volumen de importación directa desde México en 2023. España no solo lidera, sino que reporta un crecimiento del 30% en consumo, marcándolo como un mercado prioritario para la premiumización.</p>
+            </div>
+        </section>
+        
+        <section id="consumer-shift" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#003f5c]">Decodificando al Consumidor</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12">El principal obstáculo es el legado. Para triunfar, el tequila debe pasar de ser una bebida de bajo coste a un espirituoso de culto, alineándose con las nuevas demandas del consumidor.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="kpi-card border-l-4 border-[#d45087]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#d45087]">La Percepción Histórica (La Barrera)</h3>
+                    <ul class="text-left space-y-2">
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✕</span>Consumo en "shot" con sal y limón</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✕</span>Asociado a baja calidad y precio</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✕</span>Imagen de "bebida para fiestas"</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✕</span>Valor ligado a bajo costo</li>
+                    </ul>
+                </div>
+                <div class="kpi-card border-l-4 border-[#665191]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#665191]">El Paladar Moderno (La Oportunidad)</h3>
+                    <ul class="text-left space-y-2">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Búsqueda de autenticidad y herencia</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Valoración de lo artesanal y sostenible</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Tendencia "beber menos, pero mejor"</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span>Auge de la cultura del cóctel en casa</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="gin-playbook" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#003f5c]">El Modelo a Seguir: El Renacimiento de la Ginebra</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12">La espectacular transformación de la ginebra ofrece una hoja de ruta probada. El éxito no fue una casualidad, sino el resultado de una estrategia deliberada que el tequila puede y debe emular.</p>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="text-center p-4 border-2 border-dashed border-[#2f4b7c] rounded-lg">
+                        <h4 class="font-bold text-lg text-[#2f4b7c]">Innovación en Sabor</h4>
+                        <p class="text-sm">Uso audaz de botánicos</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">→</div>
+                    <div class="arrow-down md:hidden mx-auto"></div>
+                     <div class="text-center p-4 border-2 border-dashed border-[#665191] rounded-lg">
+                        <h4 class="font-bold text-lg text-[#665191]">Narrativa Artesanal</h4>
+                        <p class="text-sm">Historias del creador</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">→</div>
+                    <div class="arrow-down md:hidden mx-auto"></div>
+                     <div class="text-center p-4 border-2 border-dashed border-[#d45087] rounded-lg">
+                        <h4 class="font-bold text-lg text-[#d45087]">"Serve" Insignia</h4>
+                        <p class="text-sm">El G&T Premium</p>
+                    </div>
+                     <div class="flow-arrow hidden md:block">→</div>
+                     <div class="arrow-down md:hidden mx-auto"></div>
+                     <div class="text-center p-4 bg-[#ff7c43] text-white rounded-lg">
+                        <h4 class="font-bold text-lg">ÉXITO</h4>
+                        <p class="text-sm">Conquista del Mercado</p>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-8">La lección para el tequila es clara: simplificar el mensaje, enfocarse en un cóctel insignia (La Paloma), y contar la historia del origen (terroir, agave de 7 años) en lugar de los aditivos.</p>
+            </div>
+        </section>
+        
+        <section id="strategy-pillars" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#003f5c]">La Estrategia de 4 Pilares</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12">Se propone una estrategia integral para transformar la percepción, impulsar la demanda y capturar la oportunidad de crecimiento premium en Europa.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="kpi-card">
+                    <div class="text-3xl mb-3">📜</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#003f5c]">1. Cambio Narrativo</h3>
+                    <p class="text-sm">De "shot" de fiesta a espirituoso de culto. Enfatizar la Indicación Geográfica, el ciclo de 7 años del agave y el factor humano (Maestro Tequilero).</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-3xl mb-3">📱</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#2f4b7c]">2. Motor Digital</h3>
+                    <p class="text-sm">Construir una comunidad educada. Usar redes sociales para tutoriales de cócteles, colaborar con influencers gastronómicos y crear contenido de valor.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-3xl mb-3">💎</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#665191]">3. Impulso de Premiumización</h3>
+                    <p class="text-sm">Reforzar el valor en cada punto de contacto. Precios premium justificados, empaque de lujo y distribución selectiva en bares y tiendas de alta gama.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-3xl mb-3">🍹</div>
+                    <h3 class="text-xl font-bold mb-2 text-[#d45087]">4. El Cóctel Insignia</h3>
+                    <p class="text-sm">Establecer la "Paloma Premium" como el G&T del tequila. Un cóctel simple, refrescante y fácil de replicar, apoyado por alianzas con mezcladores premium.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="activation" class="mb-20 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#003f5c]">Activación: La Paloma Perfecta</h2>
+            <p class="max-w-3xl mx-auto mb-12">El vehículo para conquistar el paladar europeo. Simple, elegante y auténtico. La campaña "El Verano de la Paloma" debe ser el punto de lanza de la estrategia.</p>
+            <div class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1 text-center">
+                        <img src="https://placehold.co/300x400/FF7C43/FFFFFF?text=Paloma\nPremium" alt="Cóctel Paloma Premium" class="rounded-lg mx-auto shadow-lg">
+                    </div>
+                    <div class="md:col-span-2 text-left">
+                        <h3 class="text-2xl font-bold text-[#d45087] mb-4">La Receta del Éxito</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-[#003f5c] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">1</div>
+                                <div>
+                                    <h4 class="font-bold">Vaso Alto con Hielo</h4>
+                                    <p class="text-sm">Llenar un vaso alto hasta el borde con hielo de buena calidad.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-[#2f4b7c] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">2</div>
+                                <div>
+                                    <h4 class="font-bold">60ml Tequila 100% Agave</h4>
+                                    <p class="text-sm">Añadir dos partes de un tequila blanco premium para resaltar las notas cítricas y herbales.</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start">
+                                <div class="bg-[#665191] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">3</div>
+                                <div>
+                                    <h4 class="font-bold">Refresco de Toronja Premium</h4>
+                                    <p class="text-sm">Rellenar el vaso con un refresco de toronja de alta calidad, no demasiado dulce.</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start">
+                                <div class="bg-[#d45087] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">4</div>
+                                <div>
+                                    <h4 class="font-bold">Toque de Lima Fresca</h4>
+                                    <p class="text-sm">Exprimir una rodaja de lima para añadir acidez y frescura. Decorar con otra rodaja.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="sources" class="py-16 bg-white rounded-lg shadow-md">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#003f5c]">Fuentes y Referencias</h2>
+                <div class="max-w-4xl mx-auto text-left text-sm text-gray-700 space-y-3">
+                    <p><a href="https://www.mordorintelligence.com/es/industry-reports/tequila-market" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Mercado del tequila participación, tendencias y estadísticas de la industria.</a></p>
+                    <p><a href="https://agaves.pro/analisis-del-mercado-de-tequila-y-mezcal-2024-the-spirits-business/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Análisis del Mercado de Tequila y Mezcal 2024 - The Spirits Business.</a></p>
+                    <p><a href="https://thefoodtech.com/industria-alimentaria-hoy/productores-de-tequila-y-mezcal-buscan-aumentar-exportaciones-a-nuevos-mercados-pero-enfrentan-retos/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Productores de tequila y mezcal buscan aumentar exportaciones a nuevos mercados, pero enfrentan retos.</a></p>
+                    <p><a href="https://agavespectator.com/f/2024-global-tequila-report" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">2024 GLOBAL TEQUILA REPORT - Agave Spectator.</a></p>
+                    <p><a href="https://www.mordorintelligence.com/es/industry-reports/europe-craft-spirits-industry" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Tamaño del mercado europeo de bebidas espirituosas artesanales.</a></p>
+                    <p><a href="https://www.prowein.es/es/Comunicados_de_prensa/ProWein_%E2%80%93_Reflejo_del_sector_de_bebidas_espirituosas_internacional_tendencia_de_crecimiento" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">ProWein – Reflejo del sector de bebidas espirituosas internacional: tendencia de crecimiento.</a></p>
+                    <p><a href="https://www.comunicare.es/marketing-en-europa/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Marketing en Europa - Comunicare.</a></p>
+                    <p><a href="https://www.eleconomista.com.mx/estados/Tequila-aumenta-presencia-y-proteccion-en-Europa-20240412-0075.html" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Tequila aumenta presencia y protección en Europa - El Economista.</a></p>
+                    <p><a href="https://www.elindependiente.com/economia/2023/05/26/el-consumo-de-tequila-se-dispara-un-30-en-espana-y-sigue-la-fiebre-de-estados-unidos/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">El consumo de tequila se dispara un 30% en España y sigue la fiebre de Estados Unidos.</a></p>
+                    <p><a href="https://www.informador.mx/economia/Que-paises-extranjeros-consumen-mas-tequila-20250321-0096.html" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">¿Qué países extranjeros consumen más tequila? - Informador.mx.</a></p>
+                    <p><a href="https://bieninformado.mx/encabeza-eu-el-top-10-de-los-principales-importadores-de-tequila/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Encabeza EU el Top-10 de los principales importadores de tequila - Bien Informado.</a></p>
+                    <p><a href="https://www.informador.mx/jalisco/Que-paises-en-el-mundo-beben-mas-tequila-20230927-0075.html" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">¿Qué países en el mundo importan más tequila? - Informador.mx.</a></p>
+                    <p><a href="https://spiritsselection.com/es/el-espiritu-del-cambio/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">El espíritu del cambio - Spirits Selection.</a></p>
+                    <p><a href="https://agaves.pro/crece-el-consumo-de-tequila-en-europa-un-incremento-de-tres-veces-desde-2020/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Crece el Consumo de Tequila en Europa: Un Incremento de Tres Veces Desde 2020.</a></p>
+                    <p><a href="https://agaves.pro/informe-de-marcas-2024-tequila-drinks-international/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Informe de Marcas 2024: Tequila - Drinks International.</a></p>
+                    <p><a href="https://portales.sre.gob.mx/globalmx/es/economic-relations/proteccion-al-tequila" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Protección al Tequila - Portales SRE.</a></p>
+                    <p><a href="https://www.dw.com/es/en-la-ue-s%C3%B3lo-el-tequila-podr%C3%A1-llamarse-tequila/a-48130390" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">En la UE sólo el tequila podrá llamarse tequila – DW.</a></p>
+                    <p><a href="https://www.excelsior.com.mx/nacional/protege-ue-al-tequila-con-certificado-como-indicacion-geografica/1302835" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Protege UE al tequila con certificado como Indicación Geográfica - Excélsior.</a></p>
+                    <p><a href="https://www.gob.mx/se/articulos/la-union-europea-reconoce-al-tequila-como-indicacion-geografica-194751?idiom=es" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">La Unión Europea reconoce al “Tequila” como Indicación Geográfica - Gob MX.</a></p>
+                    <p><a href="https://agriculture.ec.europa.eu/farming/crop-productions-and-plant-based-products/spirit-drinks_es" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Bebidas espirituosas - Comisión Europea.</a></p>
+                    <p><a href="https://www.boe.es/doue/2019/130/L00001-00054.pdf" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">REGLAMENTO (UE) 2019/ 787 DEL PARLAMENTO EUROPEO Y DEL CONSEJO - BOE.es.</a></p>
+                    <p><a href="https://www.wipo.int/wipolex/en/text/473904" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">European Union (EU) - WIPO Lex.</a></p>
+                    <p><a href="https://old.crt.org.mx/index.php/es/pages-3/proteccion-del-tequila-a-nivel-internacional" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Protección del Tequila a nivel internacional - CRT.</a></p>
+                    <p><a href="https://forbes.com.mx/mexico-y-la-ue-actualizan-acuerdo-para-proteger-al-tequila/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">México y la UE actualizan acuerdo para proteger al tequila.</a></p>
+                    <p><a href="https://www.seonetdigital.com/es/blog/marketing-de-ropa" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">10 estrategias de marketing para ropa y accesorios de moda.</a></p>
+                    <p><a href="https://www.theiwsr.com/insight/global-beverage-alcohol-market-set-for-moderate-recovery-in-2025-while-challenges-persist-in-2024/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Global beverage alcohol market set for moderate recovery in 2025, while challenges persist in 2024 - IWSR.</a></p>
+                    <p><a href="https://www.businessresearchinsights.com/es/market-reports/gin-market-118492" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Tamaño del mercado de ginebra, participación y perspectiva para 2032.</a></p>
+                    <p><a href="https://www.inaudio.net/post/estrategias-de-marketing-digital-de-coca-cola-y-heineken-perspectivas-del-mercado-espa%C3%B1ol" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Estrategias de Marketing Digital de Coca-Cola y Heineken - Perspectivas del Mercado Español.</a></p>
+                    <p><a href="https://www.europapress.es/economia/noticia-ventas-espirituosos-suman-dos-anos-caidas-inestabilidad-economica-inflacion-20250613125620.html" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Las ventas de espirituosos suman dos años de caídas por la inestabilidad económica y la inflación - Europa Press.</a></p>
+                    <p><a href="https://www.businessresearchinsights.com/es/market-reports/tequila-market-109551" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Informe de análisis del mercado de tequila, acciones y tendencias, 2033.</a></p>
+                    <p><a href="https://www.mordorintelligence.ar/industry-reports/gin-market" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Informe de crecimiento, análisis de participación y tamaño del mercado de ginebra 2030.</a></p>
+                    <p><a href="https://www.mordorintelligence.com/es/industry-reports/gin-market" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Mercado de ginebra ingresos, análisis y tamaño - Mordor Intelligence.</a></p>
+                    <p><a href="https://www.businessresearchinsights.com/es/market-reports/dry-gin-market-121224" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Tamaño del mercado de ginebra seca | Informe de investigación, 2025 a 2033.</a></p>
+                    <p><a href="https://www.databridgemarketresearch.com/es/reports/global-luxury-gin-market" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Tamaño del mercado de ginebra de lujo, alcance y análisis del crecimiento de la industria para 2031.</a></p>
+                    <p><a href="https://www.labarricavinos.com/blog/tendencias-ginebra-2025/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Tendencias en ginebra 2025: Innovación y sabor único. - La Barrica Vinos.</a></p>
+                    <p><a href="https://www.sumate.eu/blog/estrategias-marketing-internacional/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Estrategias de marketing internacional para ir un paso más allá - Súmate.</a></p>
+                    <p><a href="https://www.reyesgrupo.com/blog/blog-1/estrategias-de-marketing-digital-para-bebidas-especiales-921" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Estrategias de Marketing Digital para Bebidas Especiales - Reyes Grupo.</a></p>
+                    <p><a href="https://www.exclusivasmiro.es/marketing/estrategias-marketing-negocio-bebidas/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Estrategias de Marketing para Potenciar tu Negocio de Bebidas.</a></p>
+                    <p><a href="https://paraleldrinks.es/estrategias-de-marketing-para-proporcionar-bebidas-veraniegas/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">ESTRATEGIAS DE MARKETING PARA PROPORCIONAR BEBIDAS VERANIEGAS.</a></p>
+                    <p><a href="https://www.kolsquare.com/es/top-influencers/top-influencers-bebidas-espana" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Influencers en bebidas: ranking y ejemplos de campañas - Kolsquare.</a></p>
+                    <p><a href="https://socialwalls.com/es/blog/brand-activation/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Las 15 mejores ideas de activación de marca para impulsar la participación en eventos.</a></p>
+                    <p><a href="https://titula.universidadeuropea.com/bitstream/handle/20.500.12880/1282/Ignacio%20Acacio%20Perez.pdf?sequence=1&isAllowed=y" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Plan de Marketing para el lanzamiento del tequila Sanakasa 0% azúcar.</a></p>
+                    <p><a href="https://www.trendhunter.com/slideshow/popup-bars" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">16 Pop-Up Bar Concepts - Trend Hunter.</a></p>
+                    <p><a href="https://www.informabtl.com/que-son-los-pop-up-bars-y-su-importancia-en-el-sector-food-retail/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">15 Pop-Up Bars que te sorprenderán - InformaBTL.</a></p>
+                    <p><a href="https://www.pinterest.com/popuprepublic/pop-up-bars/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">68 Pop Up Bars ideas - Pinterest.</a></p>
+                    <p><a href="https://www.gastroeconomy.com/2024/07/asi-es-el-modelo-empresarial-de-disfrutar-el-mejor-restaurante-del-mundo-en-2024/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">El modelo empresarial de Disfrutar, el mejor restaurante del mundo en 2024.</a></p>
+                    <p><a href="https://repositorio.comillas.edu/rest/bitstreams/440527/retrieve" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">LA ESTRATEGIA DE CO-BRANDING: LA COMBINACIÓN ENTRE MARCA DE LUJO Y MARCA MASIVA.</a></p>
+                    <p><a href="https://www.last.app/recursos/blog/oatly-goodnews-alian-europa-acercar-cafe-sostenible-todos" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Oatly y Goodnews se alían en Europa para acercar el café sostenible a todos.</a></p>
+                    <p><a href="https://thefoodtech.com/normatividad-y-certificaciones/entrara-en-vigor-la-nueva-normativa-para-el-etiquetado-de-bebidas-alcoholicas/" class="text-[#003f5c] hover:underline" target="_blank" rel="noopener noreferrer">Entrará en vigor la nueva normativa para el etiquetado de bebidas alcohólicas.</a></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center py-8 mt-12">
+        <p class="text-sm text-gray-500">Hecho por JAMAL AMAR para FSW.</p>
+    </footer>
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).length > maxLength) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += (currentLine ? ' ' : '') + word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+        
+        const palette = {
+            blue: '#003f5c',
+            teal: '#2f4b7c',
+            purple: '#665191',
+            magenta: '#d45087',
+            orange: '#f95d6a',
+            yellow: '#ff7c43',
+        };
+
+        const europeanMarketsCtx = document.getElementById('europeanMarketsChart').getContext('2d');
+        const europeanMarketsChart = new Chart(europeanMarketsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['España', 'Alemania', 'Francia', 'Reino Unido', 'Italia'].map(wrapLabel),
+                datasets: [{
+                    label: 'Millones de Litros Importados (2023)',
+                    data: [8.3, 8.05, 5.2, 4.78, 3.31],
+                    backgroundColor: [
+                        palette.blue,
+                        palette.teal,
+                        palette.purple,
+                        palette.magenta,
+                        palette.orange,
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Top 5 Mercados Europeos por Volumen de Importación',
+                        font: {
+                            size: 18,
+                            family: "'Montserrat', sans-serif"
+                        },
+                        color: '#2C3E50',
+                        padding: {
+                            bottom: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Volumen (Millones de Litros)',
+                            color: '#2C3E50'
+                        },
+                        grid: {
+                           color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    y: {
+                         grid: {
+                           display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

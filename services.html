@@ -1,0 +1,467 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - CB Global LLC</title>
+    <!-- Link to Tailwind CSS (as used by Relume components) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Link to your new custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<section
+  id="relume"
+  class="z-[999] flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%] fade-in"
+>
+  <div class="size-full lg:flex lg:items-center lg:justify-between">
+    <div
+      class="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0"
+    >
+      <a href="index.html"
+        ><img
+          src="assets/CB_Global_Logo.png"
+          alt="Logo image"
+          class="w-16 m-2" /></a
+      ><button
+        id="menu-toggle"
+        id="menu-toggle"
+        class="-mr-2 flex size-12 flex-col items-center justify-center lg:hidden"
+      >
+        <span class="my-[3px] h-0.5 w-6 bg-black"></span
+        ><span class="my-[3px] h-0.5 w-6 bg-black"></span
+        ><span class="my-[3px] h-0.5 w-6 bg-black"></span>
+      </button>
+    </div>
+    <div
+      id="menu"
+      id="menu"
+      class="overflow-hidden px-[5%] lg:flex lg:items-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]"
+      style="height:var(--height-closed, 0)"
+    >
+      <a
+        href="index.html" class="block py-3 text-lg first:pt-7 lg:px-4 lg:py-2 lg:text-lg first:lg:pt-2 hover:text-red-500"
+        >Home</a
+      ><a
+        href="about.html"
+        class="block py-3 text-lg first:pt-7 lg:px-4 lg:py-2 lg:text-lg first:lg:pt-2"
+        >About Us</a
+      ><a
+        href="services.html"
+        class="block py-3 text-lg first:pt-7 lg:px-4 lg:py-2 lg:text-lg first:lg:pt-2"
+        >Our Services</a
+      ><a
+        href="research.html"
+        class="block py-3 text-lg first:pt-7 lg:px-4 lg:py-2 lg:text-lg first:lg:pt-2"
+        >Research</a
+      ><a
+        href="contact.html"
+        class="block py-3 text-lg first:pt-7 lg:px-4 lg:py-2 lg:text-lg first:lg:pt-2"
+        >Contact</a
+      >
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', function() {
+      menu.classList.toggle('hidden');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.style.height = isOpen ? 'auto' : '0';
+    });
+  });
+</script>
+
+
+
+
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="container fade-in">
+    <div class="w-full max-w-lg">
+      <p class="mb-3 font-semibold md:mb-4">Solutions</p>
+      <h1 class="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+        Our Marketing Services
+      </h1>
+      <p class="md:text-md">
+        Discover tailored digital marketing solutions designed to elevate your
+        brand and drive results.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-4 md:mt-8">
+        <a href="about.html">
+          <button
+            class="btn btn-primary"
+            title="Learn More"
+          >
+            Learn More</button
+        ></a>
+        <a href="contact.html">
+          <button
+            class="btn btn-secondary"
+            title="Sign Up"
+          >
+            Sign Up
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="container fade-in">
+    <div
+      class="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20"
+    >
+      <div>
+        <h3
+          class="mb-5 text-4xl leading-[1.2] font-bold md:mb-6 md:text-5xl lg:text-6xl"
+        >
+          Elevate Your Online Presence with Expert Search Engine Optimization
+          Services
+        </h3>
+        <p class="mb-5 md:mb-6 md:text-md">
+          Unlock the potential of your website with our tailored SEO strategies.
+          We help you climb search engine rankings, driving more organic traffic
+          to your site.
+        </p>
+        <ul class="grid grid-cols-1 gap-4 py-2">
+          <li class="flex self-start">
+            <div class="mr-4 flex-none self-start">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                alt="Relume logo 1"
+                class="size-6"
+              />
+            </div>
+            <p>Increase visibility and attract more visitors.</p>
+          </li>
+          <li class="flex self-start">
+            <div class="mr-4 flex-none self-start">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                alt="Relume logo 1"
+                class="size-6"
+              />
+            </div>
+            <p>Optimize content for higher search engine rankings.</p>
+          </li>
+          <li class="flex self-start">
+            <div class="mr-4 flex-none self-start">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                alt="Relume logo 1"
+                class="size-6"
+              />
+            </div>
+            <p>Drive targeted traffic to your website effectively.</p>
+          </li>
+        </ul>
+      </div>
+      <img
+        src="https://images.pexels.com/photos/267415/pexels-photo-267415.jpeg"
+        class="w-full rounded-image object-cover"
+        alt="Relume placeholder image"
+      />
+    </div>
+  </div>
+</section>
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="container fade-in">
+    <div
+      class="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20"
+    >
+      <div>
+        <p class="mb-3 font-semibold md:mb-4">Engage</p>
+        <h1
+          class="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl"
+        >
+          Maximize Your Impact with Social Media Marketing
+        </h1>
+        <p class="mb-6 md:mb-8 md:text-md">
+          Social media is a powerful tool for connecting with your audience. Let
+          us help you harness its potential to grow your brand.
+        </p>
+        <div class="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
+          <div>
+            <h6 class="mb-3 text-md leading-[1.4] font-bold md:mb-4 md:text-xl">
+              Audience Engagement
+            </h6>
+            <p>
+              Create meaningful interactions that foster loyalty and community
+              around your brand.
+            </p>
+          </div>
+          <div>
+            <h6 class="mb-3 text-md leading-[1.4] font-bold md:mb-4 md:text-xl">
+              Content Strategy
+            </h6>
+            <p>
+              Tailored content that resonates with your audience and drives
+              engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg"
+          class="w-full rounded-image object-cover"
+          alt="Relume placeholder image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="container fade-in">
+    <div
+      class="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20"
+    >
+      <div>
+        <p class="mb-3 font-semibold md:mb-4">Engage</p>
+        <h1
+          class="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl"
+        >
+          Crafting Content That Captivates and Converts
+        </h1>
+        <p class="md:text-md">
+          Our content creation services focus on delivering high-quality,
+          engaging material tailored to your audience. We help you attract and
+          retain customers through compelling storytelling and strategic
+          messaging.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/122383/pexels-photo-122383.jpeg"
+          class="w-full rounded-image object-cover"
+          alt="Relume placeholder image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="container fade-in">
+    <div class="mb-12 md:mb-18 lg:mb-20">
+      <div class="w-full max-w-lg">
+        <p class="mb-3 font-semibold md:mb-4">Services</p>
+        <h2 class="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+          Explore Our Comprehensive Digital Marketing Solutions
+        </h2>
+        <p class="md:text-md">
+          At CB Global, we offer a range of services designed to elevate your
+          online presence. From targeted PPC advertising to engaging email
+          marketing campaigns, we have the tools to drive results.
+        </p>
+      </div>
+    </div>
+    <div
+      class="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12"
+    >
+      <div class="flex w-full flex-col">
+        <div class="mb-6 md:mb-8">
+          <img
+            src="https://images.pexels.com/photos/6476260/pexels-photo-6476260.jpeg"
+            alt="Relume placeholder image"
+            class="rounded-image"
+          />
+        </div>
+        <h3
+          class="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl"
+        >
+          Maximize Your Reach with PPC Advertising
+        </h3>
+        <p>
+          Our PPC advertising strategies ensure you get the most out of your
+          budget.
+        </p>
+      </div>
+      <div class="flex w-full flex-col">
+        <div class="mb-6 md:mb-8">
+          <img
+            src="https://images.pexels.com/photos/193003/pexels-photo-193003.jpeg"
+            alt="Relume placeholder image"
+            class="rounded-image"
+          />
+        </div>
+        <h3
+          class="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl"
+        >
+          Engage Customers with Effective Email Marketing
+        </h3>
+        <p>
+          Craft personalized email campaigns that resonate with your audience.
+        </p>
+      </div>
+      <div class="flex w-full flex-col">
+        <div class="mb-6 md:mb-8">
+          <img
+            src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg"
+            alt="Relume placeholder image"
+            class="rounded-image"
+          />
+        </div>
+        <h3
+          class="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl"
+        >
+          Create Stunning Websites with Our Design Services
+        </h3>
+        <p>Our web design services focus on user experience and aesthetics.</p>
+      </div>
+    </div>
+    <div class="mt-10 flex items-center gap-4 md:mt-14 lg:mt-16"></div>
+  </div>
+</section>
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="container fade-in">
+    <div
+      class="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20"
+    >
+      <div>
+        <p class="mb-3 font-semibold md:mb-4">Excellence</p>
+        <h1 class="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+          Discover the Advantages of Our Expertise
+        </h1>
+        <p class="mb-5 text-base md:mb-6 md:text-md">
+          Our tailored digital marketing strategies are designed to meet your
+          unique business needs. Experience increased engagement, higher
+          conversion rates, and a stronger online presence.
+        </p>
+        <ul class="grid grid-cols-1 gap-4 py-2">
+          <li class="flex self-start">
+            <div class="mr-4 flex-none self-start">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                alt="Relume logo 1"
+                class="size-6"
+              />
+            </div>
+            <span>Customized solutions that drive measurable results.</span>
+          </li>
+          <li class="flex self-start">
+            <div class="mr-4 flex-none self-start">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                alt="Relume logo 1"
+                class="size-6"
+              />
+            </div>
+            <span>Expert team dedicated to your business growth.</span>
+          </li>
+          <li class="flex self-start">
+            <div class="mr-4 flex-none self-start">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                alt="Relume logo 1"
+                class="size-6"
+              />
+            </div>
+            <span
+              >Innovative strategies that set you apart from competitors.</span
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/7979597/pexels-photo-7979597.jpeg"
+          class="w-full rounded-image object-cover"
+          alt="Relume placeholder image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="relume" class="px-[5%] py-16 md:py-24 lg:py-28 fade-in">
+  <div class="rounded-card overflow-hidden relative container fade-in">
+    <div class="relative z-10 flex flex-col justify-center p-8 md:p-12 lg:p-16">
+      <div class="w-full max-w-lg">
+        <h2
+          class="mb-5 text-5xl font-bold text-white md:mb-6 md:text-7xl lg:text-8xl"
+        >
+          Unlock Your Business Potential
+        </h2>
+        <p class="text-white md:text-md">
+          Connect with our team today for tailored strategies that drive results
+          and elevate your brand.
+        </p>
+      </div>
+      <div class="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+        <a href="contact.html">
+          <button
+            class="btn btn-primary"
+            title="Contact"
+          >
+            Contact</button
+        ></a>
+        <a href="services.html">
+          <button
+            class="btn btn-secondary text-white"
+            title="Learn More"
+          >
+            Learn More
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg"
+        class="size-full object-cover"
+        alt="Relume placeholder image"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer id="relume" class="px-[5%] py-12 md:py-18 lg:py-20 bg-gray-100 fade-in">
+  <div class="container fade-in">
+    <div class="flex flex-col items-center pb-12 md:pb-18 lg:pb-20">
+       
+      <ul class="grid grid-flow-row grid-cols-1 items-start justify-center justify-items-center gap-6 md:grid-flow-col md:grid-cols-[max-content] md:justify-center md:justify-items-start">
+        <li class="font-semibold"><a href="index.html">Home</a></li>
+        <li class="font-semibold"><a href="about.html">About Us</a></li>
+        <li class="font-semibold"><a href="services.html">Our Services</a></li>
+        <li class="font-semibold"><a href="research.html">Research</a></li>
+        <li class="font-semibold"><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="h-px w-full bg-gray-300"></div>
+    <div class="flex flex-col-reverse items-center justify-between pt-6 pb-4 text-center text-sm md:flex-row md:pt-8 md:pb-0">
+      <p class="mt-8 md:mt-0 text-gray-600">© 2025 CB Global LLC. All rights reserved.</p>
+      <ul class="grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
+        <li class="underline decoration-black underline-offset-1"><a href="#">Privacy Policy</a></li>
+        <li class="underline decoration-black underline-offset-1"><a href="#">Terms of Service</a></li>
+        <li class="underline decoration-black underline-offset-1"><a href="#">Cookies Settings</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', function() {
+      menu.classList.toggle('hidden');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.style.height = isOpen ? 'auto' : '0';
+    });
+  });
+</script>

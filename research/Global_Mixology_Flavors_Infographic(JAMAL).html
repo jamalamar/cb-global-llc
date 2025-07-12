@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Sip: A Visual Guide to Mixology Trends</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1a202c;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .energetic-red { color: #FF4E50; }
+        .energetic-orange { color: #FC913A; }
+        .energetic-yellow { color: #F9D423; }
+        .bg-energetic-red { background-color: #FF4E50; }
+        .bg-energetic-orange { background-color: #FC913A; }
+        .bg-energetic-yellow { background-color: #F9D423; }
+        .bg-energetic-light-yellow { background-color: #EDE574; }
+        .bg-energetic-pale-green { background-color: #E1F5C4; }
+        .border-energetic-orange { border-color: #FC913A; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="text-center py-12 md:py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider energetic-orange">The Global Sip</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-300">An infographic exploring the powerful trends and vibrant flavors reshaping mixology worldwide for 2025 and beyond.</p>
+            <p class="text-xl text-yellow-600 mt-1">Fraternity Spirits</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="macro-trends" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Forces Reshaping The Global Bar</h2>
+                <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Five key consumer shifts are dictating the future of what, why, and how we drink.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl energetic-red mb-3">🌿</div>
+                    <h3 class="text-xl font-bold mb-2">Agave Ascendancy</h3>
+                    <p class="text-gray-600 text-sm">Tequila & Mezcal defy market trends, driven by consumer demand for authentic, terroir-driven spirits.</p>
+                     <p class="text-3xl font-black energetic-red mt-4">+7%</p>
+                    <p class="text-xs text-gray-500">Value Growth</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl energetic-orange mb-3">💧</div>
+                    <h3 class="text-xl font-bold mb-2">Moderation Mandate</h3>
+                    <p class="text-gray-600 text-sm">The rise of low-and-no alcohol options is a permanent cultural shift toward mindful drinking.</p>
+                    <p class="text-3xl font-black energetic-orange mt-4">40%</p>
+                    <p class="text-xs text-gray-500">of Gen Z have never tried alcohol</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl energetic-yellow mb-3">💎</div>
+                    <h3 class="text-xl font-bold mb-2">Premium Paradox</h3>
+                    <p class="text-gray-600 text-sm">"Premium" is being redefined by craft and story, not just price, fueling "affordable luxury."</p>
+                    <div class="chart-container h-48 max-h-48 mt-4">
+                        <canvas id="premiumPreferenceChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl energetic-light-yellow mb-3">✅</div>
+                    <h3 class="text-xl font-bold mb-2">Convenience Revolution</h3>
+                    <p class="text-gray-600 text-sm">Premium Ready-to-Drink (RTD) cocktails are booming, democratizing high-quality mixology.</p>
+                    <p class="text-3xl font-black energetic-yellow mt-4">+6%</p>
+                    <p class="text-xs text-gray-500">Projected RTD Market CAGR</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                     <div class="text-4xl energetic-pale-green mb-3">📱</div>
+                    <h3 class="text-xl font-bold mb-2">Digital Distillation</h3>
+                    <p class="text-gray-600 text-sm">Social media platforms like TikTok can create global flavor phenomena in weeks, not years.</p>
+                    <p class="text-3xl font-black energetic-red mt-4">⚡️</p>
+                    <p class="text-xs text-gray-500">Collapse of trend lifecycle</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="regional-tastes" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">A World of Flavor: The Global Cocktail Map</h2>
+                <p class="mt-2 text-gray-600 max-w-2xl mx-auto">While global trends provide a framework, taste finds its most vibrant expression in regional favorites. Here's what the world is drinking.</p>
+            </div>
+            
+             <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-12 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-2 text-center energetic-red">The Undisputed Champion: North America</h3>
+                <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">The Margarita's reign continues, with 54% of U.S. bars reporting that tequila-based spirits outsell all others. This chart shows the most-requested classics that define the continent's palate.</p>
+                <div class="md:flex md:items-center md:gap-8">
+                    <div class="md:w-1/3 text-center mb-6 md:mb-0">
+                         <div class="chart-container h-64 max-h-64">
+                            <canvas id="tequilaDominanceChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="chart-container h-80 max-h-80">
+                           <canvas id="northAmericaChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-1 energetic-orange">Latin America</h3>
+                    <p class="text-sm font-semibold mb-4 text-gray-500">Indigenous Spirits & Tropical Abundance</p>
+                    <p class="text-gray-600 mb-6 text-sm">Cocktails here are liquid history, celebrating national identity through native spirits like Cachaça, Pisco, and Tequila, blended with the region's rich biodiversity.</p>
+                    <div class="chart-container">
+                        <canvas id="latinAmericaChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-1 energetic-yellow">Europe</h3>
+                    <p class="text-sm font-semibold mb-4 text-gray-500">Aperitivo Bitterness & Craft Botanicals</p>
+                    <p class="text-gray-600 mb-6 text-sm">A continent of contrasts, from the ritualistic, bitter notes of the Italian Aperitivo to the modern, herbal complexity of the craft Gin & Tonic revolution.</p>
+                    <div class="chart-container">
+                        <canvas id="europeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-1 energetic-light-yellow text-gray-800">Asia</h3>
+                    <p class="text-sm font-semibold mb-4 text-gray-500">Fusion of Tradition, Tropicality & Umami</p>
+                    <p class="text-gray-600 mb-6 text-sm">The world's most dynamic scene, where Western classics are rebuilt with a vast pantry of local ingredients like yuzu, pandan, and soju, creating entirely new flavor profiles.</p>
+                    <div class="chart-container">
+                        <canvas id="asiaChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-1 energetic-pale-green text-gray-800">Oceania</h3>
+                    <p class="text-sm font-semibold mb-4 text-gray-500">Sun-Drenched Fruits & Native Botanicals</p>
+                    <p class="text-gray-600 mb-6 text-sm">A culture defined by the outdoors, favoring refreshing, fruit-forward drinks while carving a unique identity with native botanicals like Lemon Myrtle and Kawakawa.</p>
+                    <div class="chart-container">
+                        <canvas id="oceaniaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vanguard" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Cutting Edge: Vanguard Flavors</h2>
+                <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Beyond the classics, a new wave of innovation is redefining the possibilities of flavor in the glass. These are the trends shaping the future of the bar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-energetic-red">
+                    <h3 class="text-xl font-bold mb-3">The Savory Revolution</h3>
+                    <p class="text-gray-600 text-sm mb-4">Bartenders are now "liquid chefs," borrowing techniques from gastronomy to introduce umami and complexity.</p>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-center"><span class="bg-energetic-red text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🍄</span>Mushroom, Miso, Seaweed</li>
+                        <li class="flex items-center"><span class="bg-energetic-red text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🧈</span>Fat-Washing (Bacon, Butter)</li>
+                        <li class="flex items-center"><span class="bg-energetic-red text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🌶️</span>Chipotle, Ancho, Tamarind</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-energetic-orange">
+                    <h3 class="text-xl font-bold mb-3">The Hyper-Local Imperative</h3>
+                    <p class="text-gray-600 text-sm mb-4">Going beyond "local" to forage wild ingredients and use produce from a single farm or culture.</p>
+                     <ul class="text-sm space-y-2">
+                        <li class="flex items-center"><span class="bg-energetic-orange text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🌿</span>Wild Garlic, Foraged Elderflower</li>
+                        <li class="flex items-center"><span class="bg-energetic-orange text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🍋</span>Finger Limes, Native Mints</li>
+                        <li class="flex items-center"><span class="bg-energetic-orange text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🌱</span>Regional Vinegars, Seaweeds</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-energetic-yellow">
+                    <h3 class="text-xl font-bold mb-3">The Fermentation Frontier</h3>
+                    <p class="text-gray-600 text-sm mb-4">Using funk, fizz, and acidity from fermented drinks to create complex, probiotic-rich cocktails.</p>
+                     <ul class="text-sm space-y-2">
+                        <li class="flex items-center"><span class="bg-energetic-yellow text-gray-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🍵</span>Kombucha, Water Kefir</li>
+                        <li class="flex items-center"><span class="bg-energetic-yellow text-gray-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🍍</span>Tepache, Fruit Shrubs</li>
+                        <li class="flex items-center"><span class="bg-energetic-yellow text-gray-800 rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🥕</span>Lacto-Fermented Brines</li>
+                    </ul>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-300">
+                    <h3 class="text-xl font-bold mb-3">A Floral Renaissance</h3>
+                    <p class="text-gray-600 text-sm mb-4">Moving beyond taste to aroma, using floral notes for elegance, complexity, and visual appeal.</p>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-center"><span class="bg-green-300 text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">🌸</span>Elderflower, Hibiscus, Rose</li>
+                        <li class="flex items-center"><span class="bg-green-300 text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">💜</span>Lavender, Violet</li>
+                        <li class="flex items-center"><span class="bg-green-300 text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 text-xs">💮</span>Jasmine, Cherry Blossom</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="synthesis" class="mb-12">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Flavor Matrix: 2025+ Outlook</h2>
+                <p class="mt-2 text-gray-600 max-w-2xl mx-auto">The most successful cocktails of the future will exist at the intersection of core consumer motivations and key flavor profiles. This matrix provides a strategic guide to innovation.</p>
+            </div>
+            <div class="overflow-x-auto bg-white p-4 rounded-xl shadow-lg">
+                <table class="w-full text-sm text-left text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3"></th>
+                            <th scope="col" class="px-6 py-3">Wellness / Moderation</th>
+                            <th scope="col" class="px-6 py-3">Adventure / Global</th>
+                            <th scope="col" class="px-6 py-3">Premium / Craft</th>
+                            <th scope="col" class="px-6 py-3">Nostalgia / Comfort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-energetic-pale-green">Tropical / Fruity</th>
+                            <td class="px-6 py-4">Clarified Piña Colada (NA Rum)</td>
+                            <td class="px-6 py-4">Mango Mojito (India)</td>
+                            <td class="px-6 py-4">Caipifruta (Brazil)</td>
+                            <td class="px-6 py-4">Classic Daiquiri</td>
+                        </tr>
+                         <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-energetic-light-yellow">Savory / Umami</th>
+                            <td class="px-6 py-4">Virgin Bloody Mary (Mushroom)</td>
+                            <td class="px-6 py-4">Kimchi Bloody Mary (Korea)</td>
+                            <td class="px-6 py-4">Mushroom Fat-Washed Martini</td>
+                            <td class="px-6 py-4">Dirty Martini</td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-energetic-yellow">Spicy</th>
+                            <td class="px-6 py-4">Jalapeño Kombucha Spritz</td>
+                            <td class="px-6 py-4">Picante de la Casa</td>
+                            <td class="px-6 py-4">Oaxaca Old Fashioned (Mezcal)</td>
+                            <td class="px-6 py-4">Spicy Margarita</td>
+                        </tr>
+                         <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-energetic-orange">Floral / Herbal</th>
+                            <td class="px-6 py-4">Lavender & Chamomile Soda (NA)</td>
+                            <td class="px-6 py-4">Gin Basil Smash (Germany)</td>
+                            <td class="px-6 py-4">Elderflower Bee's Knees</td>
+                            <td class="px-6 py-4">Classic G&T (Botanical)</td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-energetic-red text-white">Coffee / Chocolate</th>
+                            <td class="px-6 py-4">Cold Brew & Wattleseed Syrup</td>
+                            <td class="px-6 py-4">Indian Hot Buttered Rum (Chai)</td>
+                            <td class="px-6 py-4">Parmesan Espresso Martini</td>
+                            <td class="px-6 py-4">White Russian</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="sources" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Sources & References</h2>
+                <p class="mt-2 text-gray-600 max-w-2xl mx-auto">This infographic is based on data synthesized from leading industry reports and publications.</p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <ul class="list-disc list-inside space-y-3 text-gray-700 text-sm">
+                    <li><a href="https://www.escoffier.edu/blog/world-food-drink/alcohol-and-beverage-trends/" target="_blank" class="text-blue-600 hover:underline">2025 Alcohol and Beverage Trends: Key Statistics on What's ...</a></li>
+                    <li><a href="https://www.bevsource.com/news/2025-beverage-trends" target="_blank" class="text-blue-600 hover:underline">Unpacking 2025 Beverage Trends - BevSource</a></li>
+                    <li><a href="https://www.diageobaracademy.com/en-us/home/cocktail-trends-and-festive-serves/6-bar-industry-trends-tipped-for-2025" target="_blank" class="text-blue-600 hover:underline">6 Bar Industry Trends Tipped For 2025 - Diageo Bar Academy</a></li>
+                    <li><a href="https://drinks-intel.com/industry-intel/flavour-trends-for-cocktails-in-2025-insights-from-leading-bartenders/" target="_blank" class="text-blue-600 hover:underline">Flavour trends for cocktails in 2025 - Insights from leading ...</a></li>
+                    <li><a href="https://heritagelounge.com.au/cocktail-culture-a-global-journey-through-mixed-drinks-history/" target="_blank" class="text-blue-600 hover:underline">Cocktail Culture: A Global Journey through Mixed Drinks History - Heritage Lounge</a></li>
+                    <li><a href="https://gosharpener.com/blogs/614687/The-World-of-Drinks-A-Cultural-and-Culinary-Exploration" target="_blank" class="text-blue-600 hover:underline">The World of Drinks: A Cultural and Culinary Exploration - GoSharpener</a></li>
+                    <li><a href="https://carouselclub.com/2024/10/15/guide-to-mixing-flavors-bartenders-insider-tips/" target="_blank" class="text-blue-600 hover:underline">Guide to Mixing Flavors: Bartender's Insider Tips - Carousel Club</a></li>
+                    <li><a href="https://drinksworld.com/modern-classic/" target="_blank" class="text-blue-600 hover:underline">Modern Classic Cocktails and Contemporary Drinks in 2025</a></li>
+                    <li><a href="https://www.cotto.co.nz/blog/cocktail-trends/" target="_blank" class="text-blue-600 hover:underline">Sip on This – The Biggest Cocktail Trends in NZ for Enthusiasts - Cotto</a></li>
+                    <li><a href="https://nzabc.org.nz/2022-beverage-trends-summer-options-supporting-local-and-bold-flavours-to-sip-and-savour/" target="_blank" class="text-blue-600 hover:underline">2022 beverage trends: summer options, supporting local and bold flavours to 'sip and savour'</a></li>
+                    <li><a href="https://virginialiving.com/food/drink/fat-washed-cocktails-the-secret-to-richer-smoother-sips/" target="_blank" class="text-blue-600 hover:underline">Fat-Washed Cocktails: The Secret to Richer, Smoother Sips | Virginia Living</a></li>
+                    <li><a href="https://matthewsliquor.com.au/blog/drink-inspiration/popular-cocktails-in-australia" target="_blank" class="text-blue-600 hover:underline">Popular Cocktails In Australia - Matthews Liquor</a></li>
+                    <li><a href="https://home.binwise.com/blog/most-popular-cocktails" target="_blank" class="text-blue-600 hover:underline">The Most Popular Cocktails: Popular Cocktails in the U.S. - BinWise</a></li>
+                    <li><a href="https://www.liquor.com/popular-cocktails-4845950" target="_blank" class="text-blue-600 hover:underline">The 10 Most Popular Cocktails Right Now - Liquor.com</a></li>
+                    <li><a href="https://www.tasteatlas.com/best-rated-cocktails-in-north-america" target="_blank" class="text-blue-600 hover:underline">100 Best Cocktails in North America - TasteAtlas</a></li>
+                    <li><a href="https://www.moodymixologist.com/blog/creating-cocktails-what-are-the-8-tastes" target="_blank" class="text-blue-600 hover:underline">Creating Cocktails: What Are the 8 Tastes? - Moody Mixologist</a></li>
+                    <li><a href="https://citylifestyle.com/articles/8cf0ce84-ae4d-4fd3-88ea-f59b3d974053" target="_blank" class="text-blue-600 hover:underline">The History of Brunch - City Lifestyle</a></li>
+                    <li><a href="https://www.salon.com/2023/03/26/keep-the-booze-comin-how-did-bottomless-mimosas-become-a-brunch-staple/" target="_blank" class="text-blue-600 hover:underline">Keep the booze comin'! How did bottomless mimosas become a brunch staple? - Salon.com</a></li>
+                    <li><a href="https://www.diffordsguide.com/g/1138/margarita-cocktail/origins-and-history" target="_blank" class="text-blue-600 hover:underline">Margarita cocktail and its history - Difford's Guide</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Margarita" target="_blank" class="text-blue-600 hover:underline">Margarita - Wikipedia</a></li>
+                    <li><a href="https://www.thecocktailproject.com/cocktail-flavor-profiles" target="_blank" class="text-blue-600 hover:underline">Understanding Cocktail Flavor Profiles</a></li>
+                    <li><a href="https://guide.michelin.com/en/article/features/ulele-tampa-menu-michelin-guide-selection-florida" target="_blank" class="text-blue-600 hover:underline">How Ulele Elevates Hyper-Local Produce with Distinction - MICHELIN Guide</a></li>
+                    <li><a href="https://hoteljefe.com/en/latin-cocktail-guide-explore-the-authentic-flavors-of-latin-america/" target="_blank" class="text-blue-600 hover:underline">Top 5 Latin Cocktails To Enjoy This Summer - Hotel Jefe</a></li>
+                    <li><a href="https://jaguarrestaurant.com/4-cocktails-to-try-at-latin-american-restaurants/" target="_blank" class="text-blue-600 hover:underline">4 cocktails to try at Latin American restaurants</a></li>
+                    <li><a href="https://www.thethreedrinkers.com/magazine-content/tag/What+cocktails+are+popular+in+Latin+America%3F" target="_blank" class="text-blue-600 hover:underline">What cocktails are popular in Latin America? — Spirits - The Three Drinkers</a></li>
+                    <li><a href="https://spiritsselection.com/en/a-mixologists-take-on-agricultural-rum-in-coktails/" target="_blank" class="text-blue-600 hover:underline">A mixologists' take on Agricultural Rum in cocktails - Spirits Selection by CMB</a></li>
+                    <li><a href="https://nabrasa.com/2024/10/08/the-history-of-the-caipirinha-brazils-national-cocktail/" target="_blank" class="text-blue-600 hover:underline">The History of the Caipirinha: Brazil's National Cocktail - Nabrasa</a></li>
+                    <li><a href="https://www.aventuradobrasil.com/blog/cachaca-and-the-world-of-brazilian-cocktails-a-taste-of-brazil/" target="_blank" class="text-blue-600 hover:underline">Cachaça and the World of Brazilian Cocktails – A Taste of Brazil - Aventura do Brasil</a></li>
+                    <li><a href="https://oxfordre.com/latinamericanhistory/viewbydoi/10.1093/acrefore/9780199366439.013.1090" target="_blank" class="text-blue-600 hover:underline">Pisco and Pisco Sour | Oxford Research Encyclopedia of Latin American History</a></li>
+                    <li><a href="https://discover.silversea.com/destinations/s-a-l-t-bar-unraveling-the-mystery-of-south-americas-pisco/" target="_blank" class="text-blue-600 hover:underline">Peruvian Pisco: Savoring the Origins of Peru and Chile's Iconic Spirit ...</a></li>
+                    <li><a href="https://therumlab.com/a-short-story-about-aguardiente-throughout-latin-america/" target="_blank" class="text-blue-600 hover:underline">A short history about Aguardiente throughout Latin America - The Rum Lab</a></li>
+                    <li><a href="https://www.gviusa.com/blog/getting-to-know-latin-american-food-culture/" target="_blank" class="text-blue-600 hover:underline">Getting to know Latin American food culture | GVI</a></li>
+                    <li><a href="https://www.sharpgrid.com/ontrade-insights-eng/top-cocktails-in-europe-and-what-does-it-mean-for-horeca-beverage-producers" target="_blank" class="text-blue-600 hover:underline">Top Cocktails in Europe and What Does it Mean for HoReCa Beverage Producers</a></li>
+                    <li><a href="https://www.thedrinksbusiness.com/2023/02/the-five-most-popular-cocktails-in-europe/" target="_blank" class="text-blue-600 hover:underline">The five most popular cocktails in Europe - The Drinks Business</a></li>
+                    <li><a href="https://www.tasteatlas.com/best-rated-cocktails-in-europe" target="_blank" class="text-blue-600 hover:underline">What to drink in Europe? Top 100 European Cocktails - TasteAtlas</a></li>
+                    <li><a href="https://www.thespiritsbusiness.com/2021/09/quarter-of-europeans-favour-cocktails/" target="_blank" class="text-blue-600 hover:underline">Quarter of Europeans favour cocktails - The Spirits Business</a></li>
+                    <li><a href="https://www.santambroeus.com/it-eu/blogs/news/the-italian-tradition-of-aperitivo" target="_blank" class="text-blue-600 hover:underline">The Italian Tradition of Aperitivo – Sant Ambroeus</a></li>
+                    <li><a href="https://resortlifestylemag.com/articles/italys-beloved-aperitivo-culture" target="_blank" class="text-blue-600 hover:underline">A Journey Through Italy's Beloved Aperitivo Culture - Resort Lifestyle Magazine</a></li>
+                    <li><a href="https://whiskys.co.uk/blogs/news/spain-s-gin-tonic-culture-why-they-take-it-so-seriously" target="_blank" class="text-blue-600 hover:underline">Spain's Gin-Tonic Culture: Why They Take It So Seriously - Whiskys.co.uk</a></li>
+                    <li><a href="https://www.beefeatergin.com/en-gb/blog/the-history-of-the-gin-tonic/" target="_blank" class="text-blue-600 hover:underline">History of the Gin and Tonic - Beefeater Gin</a></li>
+                    <li><a href="https://www.fatadams.co.uk/articles/craft-gin-is-very-different-from-commerical-gin" target="_blank" class="text-blue-600 hover:underline">Craft gin is very different from Commerical Gin - Fat Adam's Cocktails</a></li>
+                    <li><a href="https://www.theshropshiredistillery.co.uk/blogs/news/exploring-the-history-of-gin" target="_blank" class="text-blue-600 hover:underline">Exploring the History of Gin: From Medicinal Roots to Modern Craftsmanship</a></li>
+                    <li><a href="https://innsupplies.uk/blogs/gin/gin-a-timeless-spirit-with-modern-appeal" target="_blank" class="text-blue-600 hover:underline">Gin: A Timeless Spirit with Modern Appeal - Inn Supplies</a></li>
+                    <li><a href="https://www.themixer.com/en-us/trends/asian-cocktails/" target="_blank" class="text-blue-600 hover:underline">Asian Cocktails: 13 Inspired Recipes to Mix Up Now - The Mixer</a></li>
+                    <li><a href="https://www.tasteatlas.com/best-rated-cocktails-in-asia" target="_blank" class="text-blue-600 hover:underline">What to drink in Asia? Top 19 Asian Cocktails - TasteAtlas</a></li>
+                    <li><a href="https://static.bartendersbusiness.com/en/articles/insights-1/asian-cocktails-a-lasting-trend-or-a-passing-fad-583.htm" target="_blank" class="text-blue-600 hover:underline">Understanding the Popularity of Asian Cocktails - Bartenders Business</a></li>
+                    <li><a href="https://tastytango.blog/rambutan-mojito-exotic-twist-on-a-classic-cocktail-with-a-southeast-asian-fruit/" target="_blank" class="text-blue-600 hover:underline">Rambutan Mojito: Exotic Twist on a Classic Cocktail with a Southeast Asian Fruit</a></li>
+                    <li><a href="https://www.reddit.com/r/cocktails/comments/1audrsd/asian_flavours/" target="_blank" class="text-blue-600 hover:underline">Asian flavours. : r/cocktails - Reddit</a></li>
+                    <li><a href="https://www.themixer.com/en-us/trends/asian-cocktail-ingredients/" target="_blank" class="text-blue-600 hover:underline">Unique Asian Cocktail Ingredients for Inspired Drinks - The Mixer</a></li>
+                    <li><a href="https://bartenderspiritsawards.com/en/blog/insights-1/a-global-fusion-with-local-ingredients-exploring-unique-cocktails-from-india-brazil-and-china-741.htm" target="_blank" class="text-blue-600 hover:underline">A Global Fusion With Local Ingredients: Exploring Unique Cocktails From India, Brazil, And China - Bartender Spirits Awards</a></li>
+                    <li><a href="https://www.ethimex.com/uncategorized/shochu-soju-and-sake-exploring-the-rich-histories-and-rising-influence-of-these-iconic-spirits/" target="_blank" class="text-blue-600 hover:underline">Shochu, Soju, and Sake: Exploring the Rich Histories and Rising ...</a></li>
+                    <li><a href="https://www.pentagoncitywine.com/post/the-basics-of-soju-korea-s-quintessential-spirit" target="_blank" class="text-blue-600 hover:underline">The Basics of Soju: Korea's Quintessential Spirit</a></li>
+                    <li><a href="https://japansake.or.jp/sake/en/basic/sake-tradition-culture/" target="_blank" class="text-blue-600 hover:underline">Sake in Japanese Tradition and Culture | JSS</a></li>
+                    <li><a href="https://sakeya.sg/blogs/do-you-know/the-evolution-and-cultural-significance-of-japanese-sake" target="_blank" class="text-blue-600 hover:underline">The Evolution and Cultural Significance of Japanese Sake - Sakeya.sg</a></li>
+                    <li><a href="https://www.drinkcollectiv.com/2025/06/19/the-grasshopper-bar-in-manila-transforming-hyperlocal-filipino-ingredients-into-cocktail-gold/" target="_blank" class="text-blue-600 hover:underline">The Grasshopper Bar in Manila: Transforming Hyperlocal Filipino Ingredients into Cocktail Gold - DrinkCollectiv</a></li>
+                    <li><a href="https://www.diffordsguide.com/en-au/encyclopedia/3202/au/cocktails" target="_blank" class="text-blue-600 hover:underline">Australia's Top Ten Cocktails 2021 - Difford's Guide</a></li>
+                    <li><a href="https://pakurangaliquorspot.co.nz/10-must-try-summer-cocktails-in-nz/" target="_blank" class="text-blue-600 hover:underline">Enjoy the Taste of Summer with 10 Delicious NZ Cocktails - Pakuranga Liquor Spot</a></li>
+                    <li><a href="https://drinksdigest.com/2022/09/13/top-10-hottest-cocktails-australia/" target="_blank" class="text-blue-600 hover:underline">Top 10 hottest cocktails in Australia - Drinks Digest</a></li>
+                    <li><a href="https://www.scoop.co.nz/stories/BU2505/S00195/its-world-cocktail-day-and-kiwis-continue-to-drink-better.htm" target="_blank" class="text-blue-600 hover:underline">It's World Cocktail Day! And Kiwi's Continue To Drink Better | Scoop News</a></li>
+                    <li><a href="https://in.thebar.com/articles/4-popular-australian-cocktails-to-savour" target="_blank" class="text-blue-600 hover:underline">4 Popular Australian Cocktails To Savour - The Bar India</a></li>
+                    <li><a href="https://teara.govt.nz/en/alcohol/print" target="_blank" class="text-blue-600 hover:underline">Alcohol | Te Ara Encyclopedia of New Zealand</a></li>
+                    <li><a href="https://www.greenmoustache.com.au/greenmoblog/basic-guide-to-australian-native-botanicals" target="_blank" class="text-blue-600 hover:underline">Basic Guide to Australian Native Botanicals - Green Moustache</a></li>
+                    <li><a href="https://bwtribal.com/blogs/news/ring-in-the-new-year-with-unique-bush-tucker-cocktails" target="_blank" class="text-blue-600 hover:underline">Ring in the New Year with Unique Bush Tucker Cocktails - BW Tribal</a></li>
+                    <li><a href="https://tuckerbush.com.au/7-classic-cocktails-with-a-bushfood-twist/" target="_blank" class="text-blue-600 hover:underline">7 Classic Cocktails with a Bushfood Twist - Tucker Bush</a></li>
+                    <li><a href="https://jiggerdaily.com/hyper-drinks-angelos-bafas/" target="_blank" class="text-blue-600 hover:underline">HYPER drinks, a Book by Angelos Bafas - Jigger Daily</a></li>
+                    <li><a href="https://www.diageobaracademy.com/en-us/home/sustainability/embrace-locally-sourced-ingredients-for-exquisite-cocktails" target="_blank" class="text-blue-600 hover:underline">Embrace Locally Sourced Ingredients for Exquisite Cocktails - Diageo Bar Academy</a></li>
+                    <li><a href="https://cocktailsinthecity.com/news/hyper-drinks/" target="_blank" class="text-blue-600 hover:underline">Interview with HYPER Drinks author Angelos Bafas | Cocktails in the City | London's Best Drinks Festival</a></li>
+                    <li><a href="https://www.alcademics.com/2014/01/gamsei-a-hyperlocal-molecular-mixology-bar-in-munich.html" target="_blank" class="text-blue-600 hover:underline">Gamsei, A Hyperlocal Molecular Mixology Bar in Munich - Alcademics</a></li>
+                    <li><a href="https://amp.scmp.com/lifestyle/100-top-tables/article/3300313/inside-hyperlocal-transformation-hong-kongs-fine-dining-scene-restaurants-go-green-moras-soy" target="_blank" class="text-blue-600 hover:underline">Inside the hyperlocal transformation of Hong Kong's fine dining scene, as restaurants go green: from Mora's soy creations to Sushi Zinc's local seafood and the Regent's best-selling honey cake</a></li>
+                    <li><a href="https://www.saq.com/en/content/inspiration/trends/fresh-umami-cocktails" target="_blank" class="text-blue-600 hover:underline">A little umami in your cocktail | SAQ.COM</a></li>
+                    <li><a href="https://www.themixer.com/en-us/trends/umami-cocktails/" target="_blank" class="text-blue-600 hover:underline">Umami Cocktails: Savory Recipes to Try Now - The Mixer</a></li>
+                    <li><a href="https://www.dylansliquor.net/blogs/the-rise-of-fat-washed-cocktails" target="_blank" class="text-blue-600 hover:underline">The Rise of Fat-Washed Cocktails: Master the Trend - Dylan's Liquor</a></li>
+                    <li><a href="https://www.foodandwine.com/fat-washed-spirits-guide-8788215" target="_blank" class="text-blue-600 hover:underline">A Guide to Fat-Washing Spirits and Cocktails - Food & Wine</a></li>
+                    <li><a href="https://craftyourscocktails.com/guides/cocktails-with-fermented-drinks/" target="_blank" class="text-blue-600 hover:underline">Top 10 Cocktails with Homemade Fermented Drinks - Mastering Mixology</a></li>
+                    <li><a href="https://www.sanzcocktails.com/how-to-create-a-cocktail-with-lacto-fermented-carrots-recipe-and-tips/#!" target="_blank" class="text-blue-600 hover:underline">HOW TO CREATE A COCKTAIL WITH LACTO-FERMENTED CARROTS | RECIPE AND TIPS</a></li>
+                    <li><a href="https://revolutionfermentation.com/en/blogs/category/fermented-beverages/beverages-recipes/" target="_blank" class="text-blue-600 hover:underline">Fermented Beverages Recipes</a></li>
+                    <li><a href="https://www.queenbeemixology.com/blog/kombucha-cocktails-fermented-flair-in-your-glass/" target="_blank" class="text-blue-600 hover:underline">Kombucha Cocktails: Fermented Flair in Your Glass - Queen Bee Mixology</a></li>
+                    <li><a href="https://warndu.com/blogs/recipes/tagged/drinks" target="_blank" class="text-blue-600 hover:underline">Free Australian Recipes | Warndu – Tagged "Drinks"</a></li>
+                    <li><a href="https://www.saveur.com/floral-cocktails-recipes/" target="_blank" class="text-blue-600 hover:underline">12 Floral Cocktail Recipes to Make Right Now | Saveur</a></li>
+                    <li><a href="https://www.odealarose.com/blog/flowery-drinks-and-cocktails/" target="_blank" class="text-blue-600 hover:underline">Flowery Drinks and Cocktails | Recipes from Ode à la Rose</a></li>
+                    <li><a href="https://www.diffordsguide.com/en-au/encyclopedia/3237/au/cocktails" target="_blank" class="text-blue-600 hover:underline">Introducing Floral Flavours to Your Cocktails at Home - Difford's Guide</a></li>
+                    <li><a href="https://www.cambriausa.com/cambria-style/blog/floral-notes" target="_blank" class="text-blue-600 hover:underline">Floral Notes: Unforgettable Mixology Experiences - Cambria Quartz</a></li>
+                    <li><a href="https://in.thebar.com/articles/try-these-ingredients-for-an-umami-addition-to-your-cocktails" target="_blank" class="text-blue-600 hover:underline">Try These Ingredients For An Umami Addition To Your Cocktails - The Bar India</a></li>
+                    <li><a href="https://candradrinks.com/11-floral-cocktails-to-enjoy-this-spring/" target="_blank" class="text-blue-600 hover:underline">11 Floral Cocktails to Enjoy this Spring - Candra Drinks</a></li>
+                    <li><a href="https://www.theshout.co.nz/trends-that-will-redefine-cocktail-culture-and-the-spirits-business-in-2024/" target="_blank" class="text-blue-600 hover:underline">Trends that will redefine cocktail culture and the spirits business in 2024 - The Shout Magazine (New Zealand)</a></li>
+                    <li><a href="https://hospitalityinsights.ehl.edu/cocktail-trends" target="_blank" class="text-blue-600 hover:underline">Cocktail Trends: Drink Ideas to Lift Your Spirits in 2025 - EHL Insights</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-center py-6">
+        <p class="text-gray-400 text-sm">Infographic created based on the report: "The Global Sip," June 2025.</p>
+        <p class="text-xs text-gray-600 mt-1">By JAMAL AMAR</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (str, maxWidth) => {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    } else {
+                        currentLine += ' ' + words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            };
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                }
+                return label;
+            };
+
+            const chartPlugins = {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: { title: tooltipTitleCallback },
+                    backgroundColor: '#1a202c',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    padding: 10,
+                    cornerRadius: 4,
+                }
+            };
+            
+            const initTequilaDominanceChart = () => {
+                const ctx = document.getElementById('tequilaDominanceChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Tequila Outperforms', 'Other Spirits'],
+                        datasets: [{
+                            data: [54, 46],
+                            backgroundColor: ['#FF4E50', '#e2e8f0'],
+                            borderColor: '#fff',
+                            borderWidth: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                             legend: {
+                                display: true,
+                                position: 'bottom',
+                                labels: {
+                                    boxWidth: 12,
+                                    font: { size: 10 }
+                                }
+                            },
+                             tooltip: {
+                                callbacks: {
+                                    label: (context) => `${context.label}: ${context.parsed}%`
+                                }
+                            }
+                        },
+                        cutout: '70%',
+                    }
+                });
+            };
+            
+            const initPremiumPreferenceChart = () => {
+                const ctx = document.getElementById('premiumPreferenceChart').getContext('2d');
+                 new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['18-34', '35+'],
+                        datasets: [{
+                            label: '% Who Opt for Premium',
+                            data: [54, 35],
+                            backgroundColor: ['#F9D423', '#EDE574'],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: { display: false },
+                                ticks: {
+                                   callback: value => value + '%',
+                                   font: { size: 10 }
+                                }
+                            },
+                            y: {
+                                grid: { display: false },
+                                ticks: { font: { size: 10 } }
+                            }
+                        },
+                         plugins: { ...chartPlugins, legend: { display: false }}
+                    }
+                });
+            };
+
+            const createRegionalChart = (chartId, title, cocktails, colors) => {
+                const ctx = document.getElementById(chartId).getContext('2d');
+                const sortedCocktails = cocktails.sort((a,b) => a.rank - b.rank);
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: sortedCocktails.map(c => wrapLabel(c.name, 16)),
+                        datasets: [{
+                            data: sortedCocktails.map(c => c.rank).reverse(), 
+                            backgroundColor: colors,
+                            borderRadius: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                display: false,
+                                beginAtZero: true
+                            },
+                            y: {
+                                grid: { display: false, drawBorder: false },
+                                ticks: {
+                                  mirror: true,
+                                  labelOffset: -10,
+                                  font: { weight: 'bold' }
+                                }
+                            }
+                        },
+                        plugins: { ...chartPlugins }
+                    }
+                });
+            };
+            
+            const regionColors = {
+                northAmerica: ['#FF4E50', '#FC913A', '#F9D423', '#EDE574', '#E1F5C4'],
+                latinAmerica: ['#FC913A', '#FF4E50', '#F9D423', '#EDE574', '#E1F5C4'],
+                europe: ['#F9D423', '#EDE574', '#E1F5C4', '#FF4E50', '#FC913A'],
+                asia: ['#EDE574', '#E1F5C4', '#FF4E50', '#FC913A', '#F9D423'],
+                oceania: ['#E1F5C4', '#EDE574', '#F9D423', '#FC913A', '#FF4E50']
+            };
+
+            const regionalData = {
+                northAmerica: [
+                    { name: 'Margarita', rank: 1 },
+                    { name: 'Martini', rank: 2 },
+                    { name: 'Old Fashioned', rank: 3 },
+                    { name: 'Espresso Martini', rank: 4 },
+                    { name: 'Moscow Mule', rank: 5 }
+                ],
+                latinAmerica: [
+                    { name: 'Caipirinha', rank: 1 },
+                    { name: 'Margarita', rank: 2 },
+                    { name: 'Pisco Sour', rank: 3 },
+                    { name: 'Mojito', rank: 4 },
+                    { name: 'Daiquiri', rank: 5 }
+                ],
+                europe: [
+                    { name: 'Mojito', rank: 1 },
+                    { name: 'Aperol Spritz', rank: 2 },
+                    { name: 'Pornstar Martini', rank: 3 },
+                    { name: 'Gin & Tonic', rank: 4 },
+                    { name: 'Margarita', rank: 5 }
+                ],
+                asia: [
+                    { name: 'Gin & Tonic', rank: 1 },
+                    { name: 'Singapore Sling', rank: 2 },
+                    { name: 'Soju Bomb', rank: 3 },
+                    { name: 'Mango Mojito', rank: 4 },
+                    { name: 'Chūhai', rank: 5 }
+                ],
+                oceania: [
+                    { name: 'Espresso Martini', rank: 1 },
+                    { name: 'Pornstar Martini', rank: 2 },
+                    { name: 'Mojito', rank: 3 },
+                    { name: 'Margarita', rank: 4 },
+                    { name: 'Piña Colada', rank: 5 }
+                ]
+            };
+            
+            initTequilaDominanceChart();
+            initPremiumPreferenceChart();
+            createRegionalChart('northAmericaChart', 'North America', regionalData.northAmerica, regionColors.northAmerica);
+            createRegionalChart('latinAmericaChart', 'Latin America', regionalData.latinAmerica, regionColors.latinAmerica);
+            createRegionalChart('europeChart', 'Europe', regionalData.europe, regionColors.europe);
+            createRegionalChart('asiaChart', 'Asia', regionalData.asia, regionColors.asia);
+            createRegionalChart('oceaniaChart', 'Oceania', regionalData.oceania, regionColors.oceania);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: El Renacimiento del Ron en Europa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F8FF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-arrow {
+            position: absolute;
+            background-color: #007FFF;
+            width: 2px;
+            height: 50px;
+        }
+        .flowchart-arrow::after {
+            content: '';
+            position: absolute;
+            border: solid #007FFF;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#004AAD] mb-4">El Renacimiento del Ron en Europa</h1>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-gray-600">
+                Un análisis visual del mercado europeo del ron, revelando una categoría impulsada por la premiumización, la innovación en cócteles y un consumidor cada vez más sofisticado.
+            </p>
+        </header>
+
+        <main>
+            <section id="market-landscape" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">El Paisaje del Mercado</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Mientras el volumen general de espirituosos se estanca, el valor crece. El ron emerge como el motor de este crecimiento, impulsado casi en su totalidad por los segmentos de alta gama.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl mb-4 text-center">Crecimiento del Mercado Europeo del Ron (Valor)</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">El mercado del ron muestra una salud robusta, con una proyección de crecimiento constante, en marcado contraste con otras categorías de espirituosos.</p>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="rumMarketGrowthChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl mb-4 text-center">El Impulso de la Premiumización (TCAC)</h3>
+                         <p class="text-center text-sm text-gray-500 mb-4">El crecimiento no está en el volumen, sino en el valor. Los segmentos premium y de lujo son los que tiran de la categoría, con un dinamismo excepcional en el lujo.</p>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="premiumizationGrowthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="consumer-profile" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">Decodificando al Consumidor Moderno</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">La decisión de compra ha evolucionado. La calidad y el sabor son la base, pero la autenticidad, la historia y la sostenibilidad son los multiplicadores del valor percibido.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
+                        <h3 class="font-bold text-xl mb-4 text-center">El Poder de la Narrativa</h3>
+                        <div class="chart-container h-48 md:h-56">
+                            <canvas id="storytellingChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Un 41% de los compradores de alcohol premium están motivados por el storytelling y la transparencia de la marca.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center">
+                        <h3 class="font-bold text-xl mb-4 text-center">La Sostenibilidad como Valor</h3>
+                        <div class="chart-container h-48 md:h-56">
+                            <canvas id="sustainabilityChart"></canvas>
+                        </div>
+                         <p class="text-center text-gray-600 mt-4">Un 34% está dispuesto a pagar más por marcas con producción ética y transparente.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-8 md:col-span-2">
+                    <h3 class="font-bold text-2xl mb-4 text-center">La Nueva Ecuación del Valor</h3>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                        <div class="font-bold text-2xl text-[#004AAD]">VALOR =</div>
+                        <div class="flex flex-col">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xl font-semibold">(</span>
+                                <div class="bg-[#A2E4F2] text-[#004AAD] p-3 rounded-lg shadow">Calidad</div>
+                                <span class="text-2xl font-light">+</span>
+                                <div class="bg-[#A2E4F2] text-[#004AAD] p-3 rounded-lg shadow">Perfil de Sabor</div>
+                                <span class="text-xl font-semibold">)</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-light text-[#007FFF]">X</div>
+                        <div class="flex flex-col">
+                            <div class="flex items-center space-x-2">
+                               <span class="text-xl font-semibold">(</span>
+                                <div class="bg-[#52D2E3] text-[#004AAD] p-3 rounded-lg shadow">Autenticidad</div>
+                                <span class="text-2xl font-light">+</span>
+                                <div class="bg-[#52D2E3] text-[#004AAD] p-3 rounded-lg shadow">Sostenibilidad</div>
+                                 <span class="text-xl font-semibold">)</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-light text-[#007FFF]">/</div>
+                        <div class="text-xl font-semibold bg-gray-200 p-3 rounded-lg shadow">Precio</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="key-markets" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">Inmersión en Mercados Clave</h2>
+                 <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Europa no es un monolito. Cada mercado presenta un perfil de consumidor y unas dinámicas competitivas únicas que exigen un enfoque personalizado.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                        <h3 class="font-bold text-xl mb-4 text-center">Comparativa de Mercados Europeos (Ingresos 2024)</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">Alemania se posiciona como el mercado más grande en ingresos, mientras que el Reino Unido destaca por ser el de más rápido crecimiento.</p>
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="keyMarketsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl mb-4 text-center">Cuota de Espirituosos en España</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">El ron ostenta una sólida cuota del 16% en un mercado altamente social y competitivo, dominado por el whisky.</p>
+                        <div class="chart-container h-64 md:h-72">
+                             <canvas id="spainMarketShareChart"></canvas>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-xl mb-4 text-center">Perfiles de Mercado Únicos</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><span class="font-bold text-[#007FFF] mr-2">🇬🇧 UK:</span> Impulsado por la cultura del cóctel y la tendencia NoLo.</li>
+                            <li class="flex items-start"><span class="font-bold text-[#007FFF] mr-2">🇩🇪 DE:</span> Preferencia por el ron oscuro, pero con alta sensibilidad al precio.</li>
+                            <li class="flex items-start"><span class="font-bold text-[#007FFF] mr-2">🇫🇷 FR:</span> Consumidor sofisticado que valora el origen (agrícola) y desafía al whisky.</li>
+                             <li class="flex items-start"><span class="font-bold text-[#007FFF] mr-2">🇪🇸 ES:</span> Consumo eminentemente social y diurno ('tardeo') con alta lealtad a la marca.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="competition" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">La Arena Competitiva</h2>
+                 <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">El mercado se polariza entre los titanes que buscan reclutar a los más jóvenes y los retadores premium que seducen a los conocedores a través de la artesanía y la autenticidad.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-center text-[#007FFF] mb-4">Los Titanes Globales</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-lg shadow p-4 border-l-4 border-[#007FFF]">
+                                <h4 class="font-bold">Bacardi, Captain Morgan, Havana Club</h4>
+                                <p class="text-sm"><strong class="text-gray-700">Objetivo:</strong> Gen Z y Millennials (18-25 años).</p>
+                                <p class="text-sm"><strong class="text-gray-700">Estrategia:</strong> Marketing masivo, asociaciones con música y cultura urbana, reclutamiento a través de ron especiado y cócteles de entrada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-center text-[#52D2E3] mb-4">Los Retadores Premium</h3>
+                        <div class="space-y-4">
+                             <div class="bg-white rounded-lg shadow p-4 border-l-4 border-[#52D2E3]">
+                                <h4 class="font-bold">Diplomático, Flor de Caña, Don Papa</h4>
+                                <p class="text-sm"><strong class="text-gray-700">Objetivo:</strong> Connoisseurs y bebedores curiosos (30+ años).</p>
+                                <p class="text-sm"><strong class="text-gray-700">Estrategia:</strong> Narrativa de origen y artesanía, sostenibilidad como pilar, educación y ocasión de consumo de degustación (*sipping*).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="activation" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">El Manual de Activación</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">El éxito no proviene de acciones aisladas, sino de un ecosistema de marca integrado que se refuerza a sí mismo, creando un impulso autosostenible.</p>
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="font-bold text-2xl mb-6 text-center">El Volante de Activación de Marca</h3>
+                    <div class="relative w-full h-96 md:h-[500px] flex items-center justify-center">
+                        <div class="absolute w-48 h-48 md:w-64 md:h-64 border-2 border-dashed border-[#007FFF] rounded-full"></div>
+                        <div class="absolute w-72 h-72 md:w-96 md:h-96 border-2 border-dashed border-[#52D2E3] rounded-full"></div>
+
+                        <div class="absolute top-0 transform -translate-y-1/2" style="left: 50%; transform: translateX(-50%);">
+                            <div class="bg-[#004AAD] text-white p-4 rounded-lg shadow-lg text-center w-40">
+                                <h4 class="font-bold">1. Digital y Social</h4>
+                                <p class="text-xs">Crear comunidad y cultura</p>
+                            </div>
+                        </div>
+                        <div class="absolute right-0 transform translate-x-1/2" style="top: 50%; transform: translateY(-50%);">
+                            <div class="bg-[#007FFF] text-white p-4 rounded-lg shadow-lg text-center w-40">
+                                <h4 class="font-bold">2. Experiencial</h4>
+                                <p class="text-xs">Crear mundos de marca</p>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-0 transform translate-y-1/2" style="left: 50%; transform: translateX(-50%);">
+                            <div class="bg-[#52D2E3] text-gray-800 p-4 rounded-lg shadow-lg text-center w-40">
+                                <h4 class="font-bold">3. On/Off-Trade</h4>
+                                <p class="text-xs">Ganar en el punto de compra</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 transform -translate-x-1/2" style="top: 50%; transform: translateY(-50%);">
+                            <div class="bg-[#A2E4F2] text-gray-800 p-4 rounded-lg shadow-lg text-center w-40">
+                                <h4 class="font-bold">4. Innovación</h4>
+                                <p class="text-xs">Anticipar la próxima ola</p>
+                            </div>
+                        </div>
+                    </div>
+                     <p class="text-center text-gray-600 mt-8 max-w-2xl mx-auto">Una activación experiencial genera contenido digital, que impulsa la demanda en bares y tiendas. El éxito en ventas financia la próxima innovación de producto, cerrando el ciclo y generando un crecimiento continuo.</p>
+                </div>
+            </section>
+        </main>
+        
+        <section id="sources" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#004AAD]">Fuentes Citadas</h2>
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-xs text-gray-600 break-words">
+                    <li><a href="https://www.foodretail.es/trendrinks/consumo-espirituosos-acabara-plano-2024_0_2000007279.html" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">El consumo de espirituosos acabará "plano" en 2024, según la patronal - FRS Food Retail</a></li>
+                    <li><a href="https://www.blasbermejo.com/tendencias-bebidas-espirituosas-2024/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Tendencias que marcan el rumbo de las bebidas espirituosas en 2024 - Blas Bermejo</a></li>
+                    <li><a href="https://www.vinetur.com/2025061388693/las-ventas-de-bebidas-espirituosas-caen-un-37-en-2024-y-encadenan-dos-anos-de-descenso-en-espana.html" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Las ventas de bebidas espirituosas caen un 3,7% en 2024... - Vinetur</a></li>
+                    <li><a href="https://efeagro.com/ventas-bebidas-espirituosas-caen-3/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Las ventas de bebidas espirituosas caen un 3,7 % en volumen en 2024 - EFEAgro</a></li>
+                    <li><a href="https://theofficer.es/las-ventas-de-espirituosos-caen-un-37-en-volumen-pero-mantienen-los-ingresos/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Las ventas de espirituosos caen un 3,7% en volumen pero mantienen los ingresos - The Officer</a></li>
+                    <li><a href="https://www.alimarket.es/alimentacion/informe/397078/informe-2024-de-bebidas-espirituosas" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Informe 2024 de Bebidas Espirituosas - Alimarket</a></li>
+                    <li><a href="https://www.elconciso.es/empresas/ventas-bebidas-espirituosas-caen-2024-dos-anos-bajada_0_2004138931.html" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Las ventas de bebidas espirituosas caen un 3,7% en 2024... - El Conciso</a></li>
+                    <li><a href="https://store.mintel.com/report/uk-white-spirits-and-rtds-market-report-2023" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">UK White Spirits and RTD Market Report - Mintel Store</a></li>
+                    <li><a href="https://www.cien.adexperu.org.pe/wp-content/uploads/2025/01/CIEN_RT_Dic2024-1.pdf" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">REPORTE DE TENDENCIAS - Bebidas Alcohólicas Diciembre 2024 - CIEN</a></li>
+                    <li><a href="https://straitsresearch.com/es/report/rum-market" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Fabricantes, demanda y pronóstico del mercado del ron para 2033 - Straits Research</a></li>
+                    <li><a href="https://www.mordorintelligence.ar/industry-reports/rum-market" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Análisis del mercado del ron | Tendencias de la industria... - Mordor Intelligence</a></li>
+                    <li><a href="https://www.mordorintelligence.com/es/industry-reports/rum-market" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Mercado del ron análisis, tamaño y participación - Mordor Intelligence</a></li>
+                    <li><a href="https://www.grandviewresearch.com/industry-analysis/europe-rum-market-report" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Europe Rum Market Size And Share | Industry Report, 2030 - Grand View Research</a></li>
+                    <li><a href="https://www.businessmarketinsights.com/es/reports/europe-high-end-rum-market" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Cuota de mercado, tamaño y actores del ron de alta gama... - Business Market Insights</a></li>
+                    <li><a href="https://www.globalgrowthinsights.com/es/market-reports/luxury-rum-market-112179" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Tamaño del mercado de ron de lujo, acciones y perspectivas para 2033 - Global Growth Insights</a></li>
+                    <li><a href="https://luxuryshopwines.com/noticias/los-10-mejores-rones-del-mundo/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Los 10 mejores Rones del mundo 2025 - Luxury Shop Wines</a></li>
+                    <li><a href="https://therumlab.com/hablamos-de-esto-un-resumen-del-2024-en-la-industria-del-ron/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Hablamos de esto: Un resumen del 2024 en la industria del ron - The Rum Lab</a></li>
+                    <li><a href="https://drinksint.com/news/fullstory.php/aid/11774/Bringing_Jamaican_rum_home.html" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Bringing Jamaican rum home - Drinks International</a></li>
+                    <li><a href="https://www.maximizemarketresearch.com/market-report/spiced-rum-market/206532/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Spiced Rum Market: Global Industry Analysis and Forecast (2024-2030) - Maximize Market Research</a></li>
+                    <li><a href="https://www.rum.nl/en/downloads/eascheer/spiced-rum-market" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">The Spiced Rum Market Is Set For Rapid Growth - E&A Scheer</a></li>
+                    <li><a href="https://straitsresearch.com/report/rum-market/europe" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Europe Rum Market Demand, Top Share, Report to 2031 - Straits Research</a></li>
+                    <li><a href="https://drinks-intel.com/intel/havana-club-advances-in-europe/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Havana Club advances in Europe - Global Drinks Intel</a></li>
+                    <li><a href="https://www.delectatech.com/tendencias-en-el-consumo-de-bebidas-alcoholicas-en-2024/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Tendencias en el Consumo de Bebidas Alcohólicas en 2024 - Delectatech</a></li>
+                    <li><a href="https://therumlab.com/cinco-tendencias-que-transformaran-el-mercado-de-bebidas-alcoholicas-en-2025/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Cinco tendencias que transformarán el mercado de bebidas... - The Rum Lab</a></li>
+                    <li><a href="https://www.businesswire.com/news/home/20201215006215/en/%E2%80%98Less-Is-More%E2%80%99-Bacardi-Predicts-400-Growth-in-No-and-Low-Alcohol-in-Next-Four-Years" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">'Less Is More': Bacardi Predicts 400% Growth in No and Low Alcohol... - Business Wire</a></li>
+                    <li><a href="https://www.sphericalinsights.com/es/reports/united-kingdom-rum-market" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Reino Unido Rum Market Size, Trends, Forecasts to 2035 - Spherical Insights</a></li>
+                    <li><a href="https://www.grandviewresearch.com/horizon/outlook/rum-market/germany" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Germany Rum Market Size & Outlook, 2024-2030 - Grand View Research</a></li>
+                    <li><a href="https://www.thespiritsbusiness.com/2022/01/one-third-of-uk-drinkers-opt-for-low-and-no/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">One third of UK drinkers opt for low-and-no - The Spirits Business</a></li>
+                    <li><a href="https://business.yougov.com/content/51406-the-changing-landscape-of-alcohol-and-non-alcoholic-drink-preferences-in-the-uk" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">The changing landscape of alcohol... preferences in the UK - YouGov</a></li>
+                    <li><a href="https://store.mintel.com/report/uk-dark-spirits-and-liqueurs-market-report-2022" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">UK Dark Spirits and Liqueurs Market Report 2022 - Mintel Store</a></li>
+                    <li><a href="https://www.grandviewresearch.com/industry-analysis/germany-rum-market-report" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Germany Rum Market Size & Share | Industry Report, 2030 - Grand View Research</a></li>
+                    <li><a href="https://www.timeout.es/barcelona/es/noticias/estos-son-los-paises-de-europa-donde-se-bebe-mas-alcohol-y-espana-no-es-uno-de-los-primeros-082224" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Estos son los países de Europa donde se bebe más alcohol... - Time Out</a></li>
+                    <li><a href="https://datacommons.org/ranking/Amount_Consumption_Alcohol_15OrMoreYears_AsFractionOf_Count_Person_15OrMoreYears/Country/europe?h=country%2FFIN&unit=L&hl=es" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Clasificación por Consumo de alcohol puro al año per cápita - Países de Europa - Data Commons</a></li>
+                    <li><a href="https://nielseniq.com/global/en/insights/analysis/2025/more-than-half-of-spirits-sales-in-germany-are-generated-in-the-on-premise/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">More than half of spirits sales in Germany are generated in the On-Premise - NIQ</a></li>
+                    <li><a href="https://www.icex.es/content/dam/icex/centros/alemania/documentos/2024/estudio-mercado-mercado-las-bebidas-espirituosas-alemania-2024-resumen-ejecutivo.pdf" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">El mercado de bebidas espirituosas en Alemania_2024 - ICEX</a></li>
+                    <li><a href="https://store.strategyh.com/es/report/spirits-market-in-france/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Mercado de espíritus de Francia 2025 - StrategyHelix Ltd.</a></li>
+                    <li><a href="https://www.vinetur.com/2023112276470/el-ecosistema-del-ron-se-reune-por-primera-vez-en-paris-en-2024.html" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">El ecosistema del ron se reúne por primera vez en París en 2024 - Vinetur</a></li>
+                    <li><a href="https://www.ecole-vins-spiritueux.com/fr/magazine-vin/2021-12-17,tendances-consommation-spiritueux-france" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Les tendances de consommation des spiritueux en France - Ecole des Vins et Spiritueux</a></li>
+                    <li><a href="https://rumporter.com/le-rhum-au-firmament-des-spiritueux/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Le rhum au firmament des spiritueux - Rumporter</a></li>
+                    <li><a href="https://rumporter.com/es/ron-edulcorado/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">¿El ron edulcorado sigue siendo ron? - Rumporter</a></li>
+                    <li><a href="https://www.isvin.fr/2023/05/23/le-rhum-premier-spiritueux-de-france/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Le rhum, premier spiritueux de France - ISVin</a></li>
+                    <li><a href="https://www.labarricavinos.com/blog/seleccion-de-destilados/marcas-de-ron-recomendadas-por-expertos-para-comprar-online/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Marcas de ron recomendadas por expertos para comprar online - La Barrica Vinos</a></li>
+                    <li><a href="https://www.luxuriousdrinks.com/es/licores/ron/alemania/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Ron de Alemania - Luxurious Drinks</a></li>
+                    <li><a href="https://therumlab.com/the-growing-rum-markets-in-europe-analysis-and-potential/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">The Growing Rum Markets in Europe: Analysis and Potential - The Rum Lab</a></li>
+                    <li><a href="https://therumlab.com/los-10-mejores-rones-calidad-precio-que-puedes-encontrar-en-espana/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Los 10 mejores rones calidad-precio que puedes encontrar en España - The Rum Lab</a></li>
+                    <li><a href="https://www.marketingweek.com/bacardi-creates-brand-purpose-in-12m-marketing-push/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Bacardi's £12m marketing push to launch its brand purpose - Marketing Week</a></li>
+                    <li><a href="https://www.paulkelly.design/bacardi" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Bacardi Rum - Shopper Marketing Campaign - Paul Kelly</a></li>
+                    <li><a href="https://1000heads.com/work/captain-morgan-live-like-a-captain/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Captain Morgan - Live Like A Captain | 1000heads</a></li>
+                    <li><a href="https://www.diageo.com/~/media/Files/D/Diageo-V2/Diageo-Corp/investors/results-reports-and-events/investor-events/2024/our-longstanding-commitment-to-europe.pdf" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Our longstanding commitment to Europe - Diageo</a></li>
+                    <li><a href="https://strategyonline.ca/2022/12/06/havana-club-brings-cuba-to-life-in-one-of-its-priority-markets/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Havana Club brings Cuba to life in a priority market - Strategy</a></li>
+                    <li><a href="https://www.shuttlerock.com/havana-club" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Havana Club | Shuttlerock Client Success</a></li>
+                    <li><a href="https://www.elpalaciodehierro.com/gourmet/destilados-licores/ron/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Ron de las mejores marcas - El Palacio de Hierro</a></li>
+                    <li><a href="https://www.ohbev.com/blog/rum-market-2025-forecasts-and-trends" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Rum Market 2025 Forecasts and Trends - Alcohol Marketing Agency</a></li>
+                    <li><a href="https://goatagency.com/case/kraken-rum/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Kraken Rum - Social Media Marketing Campaign Case Study - The Goat Agency</a></li>
+                    <li><a href="https://www.seonetdigital.com/es/blog/marketing-para-bebidas-alcoholicas" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">9 Estrategias de Marketing Para Bebidas Alcohólicas – Seonet</a></li>
+                    <li><a href="https://wearehels.com/rum-sampling-campaign/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Rum Sampling Campaign | We Are HEL's | Kraken</a></li>
+                    <li><a href="https://www.thespiritsbusiness.com/2025/06/london-bar-hosts-wes-anderson-pop-up/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">London bar hosts Wes Anderson pop-up - The Spirits Business</a></li>
+                    <li><a href="https://socialwalls.com/es/blog/brand-activation/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Las 15 mejores ideas de activación de marca para impulsar la participación en eventos - Social Walls</a></li>
+                    <li><a href="https://drinksretailingnews.co.uk/havana-club-rum-in-convenience-activation/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Havana Club rum in convenience activation - Drinks Retailing</a></li>
+                    <li><a href="https://m.drinksint.com/news/categoryfront.php/id/215/Rum_news.html" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Rum news - Drinks International</a></li>
+                    <li><a href="https://www.tecnovino.com/signos-de-recuperacion-y-crecimiento-del-consumo-de-bebidas-alcoholicas/" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Signos de recuperación y crecimiento del consumo de bebidas alcohólicas - Tecnovino</a></li>
+                    <li><a href="https://www.euromonitor.com/spirits-in-spain/report" target="_blank" rel="noopener noreferrer" class="text-[#007FFF] hover:underline">Spirits in Spain | Market Research Report - Euromonitor International</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-300">
+            <p class="text-gray-500">Hecho por JAMAL AMAR para FSW</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            deepBlue: '#004AAD',
+            brightBlue: '#007FFF',
+            cyan: '#52D2E3',
+            lightBlue: '#A2E4F2',
+            white: '#FFFFFF',
+            aliceBlue: '#F0F8FF'
+        };
+
+        const wrapText = (str, maxWidth) => {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#374151'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#374151' },
+                    grid: { color: '#E5E7EB' }
+                },
+                x: {
+                    ticks: { color: '#374151' },
+                    grid: { display: false }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('rumMarketGrowthChart'), {
+            type: 'line',
+            data: {
+                labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [{
+                    label: 'Mercado del Ron en Europa (Miles de Millones USD)',
+                    data: [5.12, 5.34, 5.57, 5.81, 6.06, 6.32, 6.59],
+                    borderColor: brilliantBlues.brightBlue,
+                    backgroundColor: 'rgba(0, 127, 255, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: { ...commonChartOptions, scales: { y: { beginAtZero: false } } }
+        });
+
+        new Chart(document.getElementById('premiumizationGrowthChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Ron High-End', 'Ron de Lujo'],
+                datasets: [{
+                    label: 'TCAC Proyectada (%)',
+                    data: [3.8, 7.6],
+                    backgroundColor: [brilliantBlues.cyan, brilliantBlues.deepBlue],
+                    borderColor: [brilliantBlues.cyan, brilliantBlues.deepBlue],
+                    borderWidth: 1
+                }]
+            },
+            options: { ...commonChartOptions, indexAxis: 'y' }
+        });
+
+        new Chart(document.getElementById('storytellingChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Motivados por Storytelling', 'Otros Factores'],
+                datasets: [{
+                    data: [41, 59],
+                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.lightBlue],
+                    hoverOffset: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        new Chart(document.getElementById('sustainabilityChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Pagarían más por Sostenibilidad', 'No Pagarían Más'],
+                datasets: [{
+                    data: [34, 66],
+                    backgroundColor: [brilliantBlues.brightBlue, brilliantBlues.lightBlue],
+                    hoverOffset: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
+        
+        const keyMarketsLabels = ['Alemania', 'Reino Unido', 'Francia (Crecimiento Incremental de Espirituosos)', 'España (Cuota de Ron)'];
+        const wrappedKeyMarketsLabels = keyMarketsLabels.map(label => wrapText(label, 16));
+        new Chart(document.getElementById('keyMarketsChart'), {
+            type: 'bar',
+            data: {
+                labels: wrappedKeyMarketsLabels,
+                datasets: [{
+                    label: 'Tamaño/Impacto del Mercado (Referencial)',
+                    data: [1280, 545, 2000, 16], // Data: DE $1.28B, UK $545M, FR $2B incremental, ES 16% share. The values are for visual representation of scale.
+                    backgroundColor: [brilliantBlues.deepBlue, brilliantBlues.brightBlue, brilliantBlues.cyan, brilliantBlues.lightBlue],
+                }]
+            },
+            options: { 
+                ...commonChartOptions, 
+                indexAxis: 'y',
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    tooltip: {
+                        ...commonChartOptions.plugins.tooltip,
+                        callbacks: {
+                           ...commonChartOptions.plugins.tooltip.callbacks,
+                           label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                let value = context.raw;
+                                const market = context.label.join ? context.label.join(' ') : context.label;
+
+                                if (market.includes('Alemania')) return `Alemania: $1.28B`;
+                                if (market.includes('Reino Unido')) return `Reino Unido: $545.34M`;
+                                if (market.includes('Francia')) return `Francia: $2.0B (Crec. Espirituosos)`;
+                                if (market.includes('España')) return `España: 16% Cuota de Espirituosos`;
+                                return label + value;
+                           }
+                        }
+                    }
+                }
+             }
+        });
+        
+        new Chart(document.getElementById('spainMarketShareChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Whisky', 'Licores', 'Ginebra', 'Ron', 'Otros'],
+                datasets: [{
+                    data: [27, 20, 19, 16, 18],
+                    backgroundColor: [
+                        brilliantBlues.deepBlue,
+                        brilliantBlues.brightBlue,
+                        brilliantBlues.cyan,
+                        brilliantBlues.lightBlue,
+                        '#D1D5DB'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
+
+    </script>
+</body>
+</html>
