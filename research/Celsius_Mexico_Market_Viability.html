@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: The Viability of Fitness Energy Drinks in Mexico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-value {
+            font-weight: 900;
+            color: #118AB2;
+        }
+        .kpi-label {
+            color: #073B4C;
+        }
+        .section-title {
+            color: #073B4C;
+        }
+        .accent-bg { background-color: #118AB2; }
+        .accent-text { color: #118AB2; }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            background-color: #e0f7fa;
+            border-radius: 0.5rem;
+            border: 2px solid #118AB2;
+            color: #073B4C;
+            font-weight: 600;
+            flex-grow: 1;
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            color: #FFD166;
+            margin: 0 1rem;
+            align-self: center;
+        }
+        .source-list li a {
+            color: #118AB2;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .source-list li a:hover {
+            color: #073B4C;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <div class="text-center mb-4 text-sm font-semibold text-gray-500">By JAMAL AMAR for Fraternity Spirits</div>
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black section-title mb-2">Powering Up: The Opportunity for Fitness Energy Drinks in Mexico</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">A data-driven look at the viability of launching a health-focused brand like Celsius in one of North America's most dynamic beverage markets.</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <section class="lg:col-span-2 card">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">Mexico's Thirst for Functional Beverages</h2>
+                <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">The entire non-alcoholic beverage market in Mexico is undergoing a seismic shift. Consumers are actively moving away from traditional sodas and towards functional drinks that offer tangible health benefits, creating a massive growth opportunity.</p>
+                <div class="chart-container">
+                    <canvas id="functionalDrinksGrowthChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">The Energy Drink Market is Exploding</h2>
+                <p class="text-center text-gray-600 mb-6">Within the functional category, energy drinks are the star player, with market value projected to nearly double by 2030. This makes Mexico the fastest-growing energy drink market in North America.</p>
+                <div class="chart-container">
+                    <canvas id="energyMarketGrowthChart"></canvas>
+                </div>
+            </section>
+            
+            <section class="card flex flex-col justify-center">
+                 <h2 class="text-2xl font-bold section-title mb-6 text-center">What's Driving the Mexican Consumer?</h2>
+                 <div class="space-y-6">
+                    <div class="text-center">
+                        <p class="kpi-value text-6xl">59%</p>
+                        <p class="kpi-label text-lg">Actively seek drinks fortified with vitamins & minerals.</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="kpi-value text-6xl">72%</p>
+                        <p class="kpi-label text-lg">Find "natural" ingredient claims appealing in a beverage.</p>
+                    </div>
+                    <div class="text-center">
+                         <p class="text-lg font-semibold text-red-500 bg-red-100 p-2 rounded-lg">A powerful "Clean Label" and "No/Low Sugar" trend is reshaping purchase decisions.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section class="lg:col-span-2 card">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">The Competitive Gauntlet: Price & Positioning</h2>
+                <p class="text-center text-gray-600 mb-6">The market is dominated by premium lifestyle brands and a local value champion. This creates a significant, untapped gap for a "Premium Functional" product that offers superior ingredients at an accessible-premium price point.</p>
+                <div class="chart-container">
+                    <canvas id="competitorPricingChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">The Regulatory Wall: A Hard Cap on Caffeine</h2>
+                <p class="text-center text-gray-600 mb-6">Mexican law (NOM-218) is the single biggest barrier to entry. It strictly limits caffeine content, making a standard U.S. Celsius formulation (at 200mg/can) unmarketable. Product reformulation is not optional—it's mandatory.</p>
+                 <div class="chart-container">
+                    <canvas id="caffeineComplianceChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card flex flex-col justify-center items-center">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">SWOT Analysis: Celsius in Mexico</h2>
+                <div class="grid grid-cols-2 gap-4 w-full">
+                    <div class="bg-green-100 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-green-800 flex items-center"><span class="text-2xl mr-2">👍</span>Strengths</h3>
+                        <ul class="list-disc list-inside text-green-700 mt-2">
+                            <li>Strong "Live Fit" brand alignment</li>
+                            <li>Superior zero-sugar formula</li>
+                            <li>PepsiCo distribution partnership</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-100 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-red-800 flex items-center"><span class="text-2xl mr-2">👎</span>Weaknesses</h3>
+                        <ul class="list-disc list-inside text-red-700 mt-2">
+                            <li>Non-compliant US product</li>
+                            <li>Diluted caffeine proposition</li>
+                            <li>Zero brand recognition in Mexico</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-100 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-blue-800 flex items-center"><span class="text-2xl mr-2">📈</span>Opportunities</h3>
+                        <ul class="list-disc list-inside text-blue-700 mt-2">
+                            <li>High-growth market</li>
+                            <li>Create "Premium Functional" tier</li>
+                            <li>Leverage health/wellness trend</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-100 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-yellow-800 flex items-center"><span class="text-2xl mr-2">⚠️</span>Threats</h3>
+                        <ul class="list-disc list-inside text-yellow-700 mt-2">
+                            <li>Intense incumbent competition</li>
+                            <li>Strict, evolving regulations</li>
+                            <li>High price sensitivity</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="lg:col-span-2 card">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">Blueprint for Success: The Path to Market Entry</h2>
+                <p class="text-center text-gray-600 mb-8">Viability is conditional on a strategic, multi-step execution plan that directly addresses Mexico's unique market realities and regulatory requirements.</p>
+                <div class="flex flex-col md:flex-row items-stretch justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-step">1. Reformulate Product ("Celsius MX")</div>
+                    <div class="flowchart-arrow hidden md:block">▶</div>
+                    <div class="flowchart-step">2. Strategic Pricing (Create New Tier)</div>
+                    <div class="flowchart-arrow hidden md:block">▶</div>
+                    <div class="flowchart-step">3. Leverage PepsiCo Distribution</div>
+                    <div class="flowchart-arrow hidden md:block">▶</div>
+                    <div class="flowchart-step">4. Localize "Live Fit" Marketing</div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-12 pt-8 border-t border-gray-300">
+            <section class="card bg-gray-50">
+                <h2 class="text-2xl font-bold section-title mb-4 text-center">Data Sources</h2>
+                <ol class="source-list list-decimal list-inside text-gray-600 text-sm space-y-2">
+                    <li><a href="https://www.grandviewresearch.com/industry-analysis/energy-drinks-market" target="_blank" rel="noopener noreferrer">Global & Regional Energy Drinks Market Reports</a></li>
+                    <li><a href="https://www.mordorintelligence.com/industry-reports/mexico-energy-drink-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence - Mexico Non-Alcoholic Beverages & Energy Drinks Market Analysis</a></li>
+                    <li><a href="https://www.precedenceresearch.com/" target="_blank" rel="noopener noreferrer">Precedence Research</a>, <a href="https://www.straitsresearch.com/" target="_blank" rel="noopener noreferrer">Straits Research</a>, <a href="https://www.expertmarketresearch.com/" target="_blank" rel="noopener noreferrer">Expert Market Research</a> - Market Reports</li>
+                    <li><a href="https://www.statista.com/outlook/cmo/non-alcoholic-drinks/functional-drinks/mexico" target="_blank" rel="noopener noreferrer">Statista - Functional Drinks - Mexico</a></li>
+                    <li><a href="https://www.foodexport.org/" target="_blank" rel="noopener noreferrer">Food Export</a>, <a href="https://www.foodbeverageinsider.com/" target="_blank" rel="noopener noreferrer">Food & Beverage Insider</a>, <a href="https://www.foodingredientsfirst.com/" target="_blank" rel="noopener noreferrer">Food Ingredients First</a> - Industry Publications</li>
+                    <li><a href="https://gain.fas.usda.gov/#/" target="_blank" rel="noopener noreferrer">USDA Foreign Agricultural Service - FAIRS Country & Labeling Reports</a></li>
+                    <li><a href="https://www.mintel.com/food-and-drink-market-research/" target="_blank" rel="noopener noreferrer">Mintel - Future of Water, Sports and Energy Drinks Report</a></li>
+                    <li><a href="https://www.who.int/teams/health-promotion/diet-physical-activity/fiscal-policies-for-diet" target="_blank" rel="noopener noreferrer">World Health Organization - Fiscal Policies for Diet</a></li>
+                    <li><a href="https://www.euromonitor.com/energy-drinks-in-mexico/report" target="_blank" rel="noopener noreferrer">Euromonitor - Energy Drinks in Mexico Report</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">National Library of Medicine - Academic Research</a></li>
+                    <li>Corporate Filings & Press Releases (<a href="https://www.celsiusholdingsinc.com/investors/" target="_blank" rel="noopener noreferrer">Celsius</a>, <a href="https://www.pepsico.com/investors" target="_blank" rel="noopener noreferrer">PepsiCo</a>, <a href="https://investors.monsterbevcorp.com/" target="_blank" rel="noopener noreferrer">Monster</a>)</li>
+                    <li>Business & News Publications (<a href="https://adage.com/" target="_blank" rel="noopener noreferrer">Ad Age</a>, <a href="https://www.forbes.com/" target="_blank" rel="noopener noreferrer">Forbes</a>, <a href="https://www.cnbc.com/" target="_blank" rel="noopener noreferrer">CNBC</a>, <a href="https://www.reuters.com/" target="_blank" rel="noopener noreferrer">Reuters</a>)</li>
+                    <li><a href="https://elpoderdelconsumidor.org/" target="_blank" rel="noopener noreferrer">El Poder del Consumidor</a>, <a href="https://www.elfinanciero.com.mx/" target="_blank" rel="noopener noreferrer">El Financiero</a> - Mexican Consumer & Business Publications</li>
+                    <li>Retailer Websites (<a href="https://www.walmart.com.mx/" target="_blank" rel="noopener noreferrer">Walmart</a>, <a href="https://www.chedraui.com.mx/" target="_blank" rel="noopener noreferrer">Chedraui</a>, <a href="https://www.soriana.com/" target="_blank" rel="noopener noreferrer">Soriana</a>) for price checks</li>
+                    <li>Regulatory Documents (<a href="https://www.gob.mx/cofepris" target="_blank" rel="noopener noreferrer">COFEPRIS</a>, <a href="https://www.dof.gob.mx/" target="_blank" rel="noopener noreferrer">Diario Oficial de la Federación</a>) - NOM-218, NOM-051</li>
+                    <li>Third-Party Marketplaces (<a href="https://www.mercadolibre.com.mx/" target="_blank" rel="noopener noreferrer">Mercado Libre</a>, <a href="https://www.amazon.com.mx/" target="_blank" rel="noopener noreferrer">Amazon Mexico</a>)</li>
+                </ol>
+            </section>
+            <div class="text-center mt-8 text-sm font-semibold text-gray-500">By JAMAL AMAR for Fraternity Spirits</div>
+        </footer>
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label, maxWidth = 16) => {
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine);
+            }
+            return lines;
+        };
+
+        const colors = {
+            energeticRed: '#FF6B6B',
+            energeticYellow: '#FFD166',
+            energeticGreen: '#06D6A0',
+            energeticBlue: '#118AB2',
+            energeticDark: '#073B4C'
+        };
+
+        new Chart(document.getElementById('functionalDrinksGrowthChart'), {
+            type: 'line',
+            data: {
+                labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [{
+                    label: 'Functional Drinks Market (USD Billions)',
+                    data: [3.19, 3.51, 3.86, 4.25, 4.68, 5.15, 5.66],
+                    borderColor: colors.energeticGreen,
+                    backgroundColor: 'rgba(6, 214, 160, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Total Non-Alcoholic Beverage Market (USD Billions)',
+                    data: [21.5, 22.4, 23.3, 24.2, 25.1, 26.0, 26.8],
+                    borderColor: colors.energeticBlue,
+                    backgroundColor: 'rgba(17, 138, 178, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Functional Drinks Outpacing Total Beverage Market Growth', font: { size: 16 }, color: colors.energeticDark },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    y: { ticks: { callback: (value) => `$${value}B` } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('energyMarketGrowthChart'), {
+            type: 'line',
+            data: {
+                labels: ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [{
+                    label: 'Energy Drink Market Value (USD Billions)',
+                    data: [1.59, 1.74, 1.90, 2.08, 2.28, 2.49, 2.73, 3.00],
+                    borderColor: colors.energeticRed,
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Projected Growth of Mexican Energy Drink Market', font: { size: 16 }, color: colors.energeticDark },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    y: { beginAtZero: true, ticks: { callback: (value) => `$${value}B` } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('competitorPricingChart'), {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Vive 100 (Value)'), wrapLabel('Monster Energy (Mainstream)'), wrapLabel('Proposed Celsius MX (Premium Functional)'), wrapLabel('Red Bull (Premium Lifestyle)')],
+                datasets: [{
+                    label: 'Approximate Retail Price (MXN)',
+                    data: [13, 36, 42, 45],
+                    backgroundColor: [colors.energeticYellow, colors.energeticRed, colors.energeticGreen, colors.energeticBlue],
+                    borderColor: colors.energeticDark,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    title: { display: true, text: 'Finding the "Masstige" Price Point', font: { size: 16 }, color: colors.energeticDark },
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    x: { ticks: { callback: (value) => `MXN$${value}` } }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('caffeineComplianceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Celsius U.S. Formulation', 'Mexican Legal Limit'],
+                datasets: [{
+                    label: 'Caffeine Content (mg / 100mL)',
+                    data: [56.3, 33],
+                    backgroundColor: [colors.energeticRed, colors.energeticGreen],
+                    barPercentage: 0.5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Celsius U.S. vs. Mexican Law', font: { size: 16 }, color: colors.energeticDark },
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'mg of Caffeine per 100mL' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

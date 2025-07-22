@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Estratégica 360° - VENTURA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- PALETTE SELECTION: Energetic & Playful -->
+    <!-- NARRATIVE PLAN: -->
+    <!-- 1. Hook: Title and Core Concept -->
+    <!-- 2. Brand DNA: Visualize Brand Pillars -->
+    <!-- 3. Target Audience: Demographics & Psychographics Charts -->
+    <!-- 4. Strategy Overview: Flowchart of Digital, Retail, and Experiential channels -->
+    <!-- 5. Digital Deep Dive: Chart for Social Media content mix -->
+    <!-- 6. Retail & Experiential: Key tactics visualization -->
+    <!-- 7. Conclusion: Reiterate objective -->
+    <!-- VISUALIZATION CHOICES: -->
+    <!-- Brand Pillars -> Styled HTML List (Organize) -->
+    <!-- Target Audience Age -> Bar Chart (Compare) -->
+    <!-- Target Audience Psychographics -> Donut Chart (Compare) -->
+    <!-- Strategy Flow -> Styled HTML/CSS (Organize) -->
+    <!-- Social Content Mix -> Pie Chart (Compare) -->
+    <!-- Retail/OOH Tactics -> Styled HTML List (Organize) -->
+    <!-- NO SVG, NO MERMAID JS CONFIRMED -->
+
+    <div class="container mx-auto px-4 md:px-8 py-12">
+
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="font-heading text-4xl md:text-5xl font-bold text-[#003F5C]">Estrategia 360°: VENTURA</h1>
+            <p class="font-heading text-lg mt-2 text-gray-500">Hecho por Jamal Amar</p>
+            <p class="mt-4 text-xl text-[#58508D] font-heading max-w-2xl mx-auto">Sodas Ventura son deliciosas por si solas pero también funcionan como los perfectos mezcladores.</p>
+        </header>
+
+        <!-- Section 1: Brand Pillars -->
+        <section class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-3xl font-bold text-[#003F5C]">1. Pilares de la Marca</h2>
+                <p class="mt-2 text-lg text-gray-600">Nuestra identidad se construye sobre cuatro conceptos clave que nos hacen únicos.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-[#003F5C]">
+                    <h3 class="font-heading text-xl font-bold text-[#003F5C] mb-2">El Mezclador Perfecto</h3>
+                    <p class="text-gray-600">Diseñado para complementar licores premium, no para dominarlos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-[#BC5090]">
+                    <h3 class="font-heading text-xl font-bold text-[#BC5090] mb-2">Sabor Puro</h3>
+                    <p class="text-gray-600">0% azúcar, 0% carbohidratos. 100% sabores naturales y auténticos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-[#FF6361]">
+                    <h3 class="font-heading text-xl font-bold text-[#FF6361] mb-2">Calidad Artesanal</h3>
+                    <p class="text-gray-600">Hecho en México con ingredientes locales de la más alta calidad.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-[#FFA600]">
+                    <h3 class="font-heading text-xl font-bold text-[#FFA600] mb-2">Versatilidad Sofisticada</h3>
+                    <p class="text-gray-600">Ideal para disfrutarse solo o como la base de un coctel excepcional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Target Audience -->
+        <section class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-3xl font-bold text-[#003F5C]">2. Audiencia Clave</h2>
+                <p class="mt-2 text-lg text-gray-600">Nos dirigimos a un consumidor específico que valora la calidad y las experiencias.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="font-heading text-xl font-bold text-center mb-4 text-[#003F5C]">Distribución por Edad</h3>
+                    <div class="chart-container">
+                        <canvas id="ageChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-600">El núcleo de nuestra audiencia se encuentra en el rango de 25 a 45 años, en la plenitud de su vida social y profesional.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="font-heading text-xl font-bold text-center mb-4 text-[#003F5C]">Intereses y Estilo de Vida</h3>
+                    <div class="chart-container">
+                        <canvas id="psychographicsChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-600">Son conocedores que disfrutan del "fine drinking", el diseño y la gastronomía, buscando siempre un balance con su bienestar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Strategy Flow -->
+        <section class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-3xl font-bold text-[#003F5C]">3. Estrategia de Canales</h2>
+                <p class="mt-2 text-lg text-gray-600">Un enfoque integrado para conectar con nuestra audiencia dondequiera que esté.</p>
+            </div>
+            <div class="relative">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-heading text-2xl font-bold text-[#BC5090] mb-4">Mundo Digital</h3>
+                        <ul class="text-left space-y-2 text-gray-600">
+                            <li>● Redes Sociales (Contenido de Valor)</li>
+                            <li>● Influencers (Mixólogos y Lifestyle)</li>
+                            <li>● Pauta en Medios Premium</li>
+                            <li>● Alianzas con Licores</li>
+                            <li>● Plataformas de Delivery</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-heading text-2xl font-bold text-[#FF6361] mb-4">Punto de Venta</h3>
+                         <ul class="text-left space-y-2 text-gray-600">
+                            <li>● Material POP Elegante</li>
+                            <li>● Exhibidores Premium</li>
+                            <li>● Activaciones (Sampling)</li>
+                            <li>● Recetarios y Neck Hangers</li>
+                            <li>● Ubicación en Tiendas Gourmet</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-heading text-2xl font-bold text-[#FFA600] mb-4">Experiencias y OOH</h3>
+                         <ul class="text-left space-y-2 text-gray-600">
+                            <li>● Patrocinio de Eventos (Arte, Diseño)</li>
+                            <li>● Barras de Coctelería en Festivales</li>
+                            <li>● Espacios Lounge de Marca</li>
+                            <li>● OOH en Zonas Clave</li>
+                            <li>● Diseño Minimalista y de Alto Impacto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Digital Content Mix -->
+        <section class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-3xl font-bold text-[#003F5C]">4. Mix de Contenido Digital</h2>
+                <p class="mt-2 text-lg text-gray-600">Nuestro enfoque en redes sociales se centrará en inspirar y educar.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="font-heading text-xl font-bold text-center mb-4 text-[#003F5C]">Distribución de Contenido Social</h3>
+                    <div class="chart-container">
+                        <canvas id="contentMixChart"></canvas>
+                    </div>
+                </div>
+                <div class="text-gray-700 text-lg">
+                    <p class="mb-4">La estrategia se balancea para atraer y retener a la audiencia. El <strong class="text-[#BC5090]">40% del contenido</strong> serán recetas visuales de cocteles, mostrando la versatilidad del producto.</p>
+                    <p class="mb-4">Un <strong class="text-[#FF6361]">30% se dedicará a "Momentos Ventura"</strong>, construyendo una conexión emocional a través del lifestyle. Otro <strong class="text-[#FFA600]">20%</strong> serán "hero shots" de producto, destacando su estética.</p>
+                    <p>Finalmente, un <strong class="text-[#003F5C]">10%</strong> aportará valor con tips de coctelería y maridaje, posicionándonos como expertos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center border-t pt-8 mt-16">
+            <p class="font-heading text-lg font-bold text-[#003F5C]">VENTURA: Eleva tus Momentos.</p>
+            <p class="mt-2 text-sm text-gray-500">Hecho por Jamal Amar</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            family: "'Roboto', sans-serif",
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        // Age Chart (Bar)
+        new Chart(document.getElementById('ageChart'), {
+            type: 'bar',
+            data: {
+                labels: ['<25', '25-35', '36-45', '46+'],
+                datasets: [{
+                    label: 'Distribución de Audiencia (%)',
+                    data: [10, 45, 35, 10],
+                    backgroundColor: ['#003F5C', '#BC5090', '#FF6361', '#FFA600'],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: { ...commonChartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Psychographics Chart (Doughnut)
+        new Chart(document.getElementById('psychographicsChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Fine Drinking & Coctelería', 'Diseño y Experiencias', 'Balance y Bienestar', 'Gastronomía y Cultura'],
+                datasets: [{
+                    label: 'Intereses',
+                    data: [40, 25, 20, 15],
+                    backgroundColor: ['#003F5C', '#BC5090', '#FF6361', '#FFA600'],
+                    hoverOffset: 4
+                }]
+            },
+            options: commonChartOptions
+        });
+
+        // Content Mix Chart (Pie)
+        new Chart(document.getElementById('contentMixChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Recetario Visual', 'Momentos Ventura (Lifestyle)', 'Producto (Hero Shots)', 'Tips y Contenido de Valor'],
+                datasets: [{
+                    label: 'Mix de Contenido',
+                    data: [40, 30, 20, 10],
+                    backgroundColor: ['#BC5090', '#FF6361', '#FFA600', '#003F5C'],
+                    hoverOffset: 4
+                }]
+            },
+            options: commonChartOptions
+        });
+    </script>
+
+</body>
+</html>
