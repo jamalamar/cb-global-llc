@@ -32,6 +32,23 @@
                 max-height: 400px;
             }
         }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        thead tr {
+            background-color: #003F5C;
+            color: #ffffff;
+        }
+        tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #003F5C;
+        }
     </style>
 </head>
 <body class="text-gray-700">
@@ -43,7 +60,7 @@
     <!-- 3. Target Audience: Demographics & Psychographics Charts -->
     <!-- 4. Strategy Overview: Flowchart of Digital, Retail, and Experiential channels -->
     <!-- 5. Digital Deep Dive: Chart for Social Media content mix -->
-    <!-- 6. Retail & Experiential: Key tactics visualization -->
+    <!-- 6. Tasting Notes & Pairings: Tables for flavors and cocktails -->
     <!-- 7. Conclusion: Reiterate objective -->
     <!-- VISUALIZATION CHOICES: -->
     <!-- Brand Pillars -> Styled HTML List (Organize) -->
@@ -51,7 +68,7 @@
     <!-- Target Audience Psychographics -> Donut Chart (Compare) -->
     <!-- Strategy Flow -> Styled HTML/CSS (Organize) -->
     <!-- Social Content Mix -> Pie Chart (Compare) -->
-    <!-- Retail/OOH Tactics -> Styled HTML List (Organize) -->
+    <!-- Tasting/Pairing Info -> Styled HTML Tables (Organize) -->
     <!-- NO SVG, NO MERMAID JS CONFIRMED -->
 
     <div class="container mx-auto px-4 md:px-8 py-12">
@@ -175,6 +192,59 @@
                 </div>
             </div>
         </section>
+
+        <!-- Section 5: Tasting Notes & Pairings -->
+        <section class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-3xl font-bold text-[#003F5C]">5. Guía de Sabores y Coctelería</h2>
+                <p class="mt-2 text-lg text-gray-600">El universo de cada sabor, desde sus notas hasta el coctel perfecto.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr>
+                            <th class="font-heading">Sabor Ventura</th>
+                            <th class="font-heading">Notas de Cata</th>
+                            <th class="font-heading">Licores Ideales</th>
+                            <th class="font-heading">Cocteles Sugeridos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold text-[#BC5090]">Toronja</td>
+                            <td>Cítrico, floral y con un final amargo elegante.</td>
+                            <td>Tequila Blanco, Mezcal Joven, Gin, Vodka.</td>
+                            <td>Paloma Perfecta, Gin Rosa Spritz, Mezcal Fresco.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-[#003F5C]">Pepino-Limón</td>
+                            <td>Verde, herbal y ultra refrescante con una acidez limpia.</td>
+                            <td>Gin, Vodka, Tequila Blanco.</td>
+                            <td>Gin & Garden, Vodka Cooler, Tequila Refresher.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-[#FFA600]">Jengibre</td>
+                            <td>Picor genuino y cálido, especiado y con un final largo.</td>
+                            <td>Bourbon, Rye Whiskey, Ron Añejo, Tequila Reposado.</td>
+                            <td>Mexican Mule, Kentucky Buck, Ron Especiado.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-[#FF6361]">Frutos Rojos</td>
+                            <td>Bouquet de bayas maduras, complejo y jugoso sin ser empalagoso.</td>
+                            <td>Vodka, Gin, Prosecco, Vino Rosado, Ron Blanco.</td>
+                            <td>Berry Fizz, Pink Gin Soda, Rosé Spritzer de Verano.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold" style="color: #FF8C00;">Cítricos</td>
+                            <td>Equilibrio de naranja, limón y mandarina. Crujiente y efervescente.</td>
+                            <td>Ron Blanco, Vodka, Gin, Aperol, Tequila Blanco.</td>
+                            <td>Ron Cítrico, Citrus Collins, Spritz Moderno.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
 
         <!-- Footer -->
         <footer class="text-center border-t pt-8 mt-16">
