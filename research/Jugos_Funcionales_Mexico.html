@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidad de Mercado: Bebidas Funcionales en México</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .works-cited-section {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 32px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            border-bottom: 3px solid transparent;
+            background: linear-gradient(to right, #72DDC3, #FF758C) bottom no-repeat;
+            background-size: 100% 3px;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 16px;
+            padding-left: 20px;
+            position: relative;
+        }
+        li::before {
+            content: "•";
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.5em;
+            position: absolute;
+            left: 1em;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            word-break: break-all;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+        a:hover {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        a:hover::after {
+            width: 100%;
+        }
+        .chart-container {
+            position: relative;
+            height: 320px;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background: linear-gradient(135deg, #A3A1FB 0%, #8B89F7 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 15px 35px -5px rgba(163, 161, 251, 0.3), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -5px rgba(163, 161, 251, 0.4), 0 15px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        .flowchart-step {
+            border: 3px solid #72DDC3;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            background: linear-gradient(to bottom, #ffffff 0%, #f0fdf4 100%);
+            flex-grow: 1;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .flowchart-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(114, 221, 195, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .flowchart-step:hover::before {
+            left: 100%;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(114, 221, 195, 0.3);
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            color: #72DDC3;
+            font-weight: 900;
+            align-self: center;
+            margin: 0 1rem;
+        }
+        /* Additional global improvements */
+        .container {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Enhanced card shadows */
+        .bg-white {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+        .bg-white:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Enhanced section spacing */
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        /* Enhanced gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #72DDC3, #FF758C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Enhanced button-like elements */
+        .rounded-lg {
+            transition: all 0.3s ease;
+        }
+        
+        /* Special styling for the works cited section links */
+        .works-cited-section a {
+            word-break: break-all;
+            font-size: 0.9rem;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Color Palette: Fresh & Vibrant -->
+    <!-- NEITHER Mermaid JS NOR SVG were used anywhere in this output. -->
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#72DDC3] to-[#FF758C] mb-4">El Futuro es Funcional</h1>
+            <p class="text-xl md:text-2xl font-semibold mt-2 text-gray-600">Análisis de viabilidad para una nueva línea de jugos con vitaminas y suplementos en México.</p>
+            <p class="text-sm text-gray-500 mt-4 font-medium">Made by Jamal Amar</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="market-size">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">Un Mercado en Plena Expansión</h2>
+                    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">El mercado de jugos en México es robusto, pero el crecimiento del sector de bebidas funcionales a nivel global revela el verdadero potencial. La estrategia ganadora está en la convergencia: jugos que no solo refrescan, sino que nutren.</p>
+                    <div class="chart-container">
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consumer-profile">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Conociendo al Consumidor Mexicano</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">La Búsqueda del Bienestar</h3>
+                        <p class="text-gray-600 mb-4">El consumidor mexicano está adoptando un rol proactivo en su salud. Ya no solo "come", busca "alimentarse" con productos que ofrezcan beneficios tangibles.</p>
+                        <div class="chart-container h-64">
+                            <canvas id="consumerMotivationChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Un impresionante 83% de los mexicanos conectados sigue alguna dieta restrictiva, demostrando un alto compromiso con su nutrición.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">La Lista de Deseos (y la Lista Negra)</h3>
+                        <p class="text-gray-600 mb-4">Las preferencias son claras. Los consumidores buscan activamente lo natural y evitan lo artificial, especialmente el azúcar.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-green-600">✅ Ingredientes Buscados:</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>100% Natural y Orgánico</li>
+                                    <li>Probióticos para salud digestiva</li>
+                                    <li>Adaptógenos y Nootrópicos</li>
+                                    <li>Superfrutas (Açaí, Goji, Maqui)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-red-600">❌ Ingredientes Evitados:</h4>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>Azúcares añadidos (principal preocupación)</li>
+                                    <li>Conservadores y colorantes artificiales</li>
+                                    <li>Sodio y carbohidratos en exceso</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">Poblaciones Clave</h3>
+                        <p class="text-gray-600 mb-4">Existen nichos de alto valor con necesidades específicas que representan una oportunidad directa para productos de origen vegetal.</p>
+                         <div class="chart-container h-64">
+                            <canvas id="dietsChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Estos segmentos están altamente comprometidos y dispuestos a pagar por productos que se alineen con su estilo de vida.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="competition">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">El Panorama Competitivo</h2>
+                    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">El mercado está segmentado por precio y propuesta de valor. La oportunidad no está en competir con las marcas masivas, sino en justificar un precio premium con una calidad y funcionalidad superiores.</p>
+                    <div class="chart-container">
+                        <canvas id="priceBenchmarkChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="flavors">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Una Cartera de Sabores para Ganar</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Se recomienda un portafolio balanceado que combine la familiaridad de los sabores tradicionales con la emoción de la innovación y las superfrutas.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#FFB86F]">
+                        <h3 class="font-bold text-xl mb-2">1. Mango-Naranja Inmune</h3>
+                        <p class="text-gray-600 mb-3"><span class="font-semibold">Rol:</span> Ancla de Volumen. Un sabor familiar y amado, funcionalizado para atraer a un público amplio.</p>
+                        <p class="font-semibold">Beneficio Clave: <span class="text-[#FFB86F]">Refuerzo Inmune</span></p>
+                        <p class="text-gray-600">Con Vitamina C, Zinc y Jengibre.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#FF758C]">
+                        <h3 class="font-bold text-xl mb-2">2. Jamaica-Granada Digestivo</h3>
+                        <p class="text-gray-600 mb-3"><span class="font-semibold">Rol:</span> Tradición con Giro. Conecta la cultura local con tendencias globales y una necesidad clave.</p>
+                        <p class="font-semibold">Beneficio Clave: <span class="text-[#FF758C]">Salud Intestinal</span></p>
+                        <p class="text-gray-600">Con Probióticos y Fibra Prebiótica.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#A3A1FB]">
+                        <h3 class="font-bold text-xl mb-2">3. Açaí-Frutos Rojos Energía</h3>
+                        <p class="text-gray-600 mb-3"><span class="font-semibold">Rol:</span> Héroe de Innovación. Posiciona a la marca como líder de tendencias y atrae al público joven.</p>
+                        <p class="font-semibold">Beneficio Clave: <span class="text-[#A3A1FB]">Energía y Antioxidantes</span></p>
+                        <p class="text-gray-600">Con Adaptógenos y Guaraná.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="strategy">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">La Hoja de Ruta al Éxito</h2>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-center">Fases de Lanzamiento</h3>
+                            <div class="flex flex-col items-center">
+                                <div class="w-full flex flex-col md:flex-row items-center">
+                                    <div class="flowchart-step">Fase 1: Construcción de Marca (12 meses)</div>
+                                    <div class="flowchart-arrow my-2 md:my-0">→</div>
+                                    <div class="flowchart-step">Fase 2: Escalamiento (12-24 meses)</div>
+                                </div>
+                                <div class="mt-4 text-center text-gray-600">
+                                    <p><span class="font-bold">Fase 1:</span> Lanzamiento selectivo en E-commerce (Jüsto, Rappi) y tiendas gourmet para construir una marca premium.</p>
+                                    <p class="mt-2"><span class="font-bold">Fase 2:</span> Expansión a autoservicios premium (City Market, Chedraui Selecto) con una marca ya validada y demandada.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-center">La Ventaja Regulatoria: NOM-051</h3>
+                            <p class="text-gray-600 text-center mb-4">La ley de etiquetado no es un obstáculo, es la mayor ventaja. Un producto sin sellos de advertencia comunica salud y calidad de forma instantánea.</p>
+                            <div class="flex justify-around items-center">
+                                <div class="text-center">
+                                    <div class="relative w-32 h-32 mx-auto">
+                                        <div class="absolute inset-0 bg-black rounded-full flex items-center justify-center text-white font-bold text-sm p-2 transform -rotate-12">EXCESO AZÚCARES</div>
+                                        <div class="absolute inset-0 text-red-500 text-9xl font-black flex items-center justify-center opacity-80">✕</div>
+                                    </div>
+                                    <p class="mt-2 font-semibold text-red-600">A Evitar</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="relative w-32 h-32 mx-auto bg-green-100 rounded-full flex items-center justify-center">
+                                         <div class="text-green-500 text-8xl font-black">✓</div>
+                                    </div>
+                                    <p class="mt-2 font-semibold text-green-600">El Objetivo</p>
+                                </div>
+                            </div>
+                             <p class="text-center text-gray-600 mt-4">El 47% de los compradores ha evitado un producto por los sellos. "Diseñar para no tener sellos" es la estrategia ganadora.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conclusion" class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Veredicto: Negocio Altamente Viable</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">La oportunidad es clara y el consumidor está listo. El éxito depende de tres factores críticos:</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-[#72DDC3] text-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl">1. Formulación Superior</h3>
+                        <p>Crear un producto delicioso, funcional y libre de los sellos de la NOM-051.</p>
+                    </div>
+                    <div class="bg-[#FFB86F] text-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl">2. Narrativa Auténtica</h3>
+                        <p>Comunicar con transparencia la calidad de los ingredientes y la ciencia detrás de los beneficios.</p>
+                    </div>
+                    <div class="bg-[#FF758C] text-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl">3. Estrategia de Canal</h3>
+                        <p>Construir valor en nichos premium antes de expandirse al mercado masivo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="works-cited-section">
+        <h2>References</h2>
+        <ul>
+            <li>Mercado de Bebidas Funcionales, Análisis, Informe 2025-2034, accessed July 24, 2025, <a href="https://www.informesdeexpertos.com/informes/mercado-de-bebidas-funcionales" target="_blank">https://www.informesdeexpertos.com/informes/mercado-de-bebidas-funcionales</a></li>
+            <li>Tamaño del mercado de bebidas funcionales, información para 2025-2033, accessed July 24, 2025, <a href="https://www.businessresearchinsights.com/es/market-reports/functional-beverage-market-119424" target="_blank">https://www.businessresearchinsights.com/es/market-reports/functional-beverage-market-119424</a></li>
+            <li>Bebidas funcionales Tamaño del mercado, acciones y tendencias de crecimiento, [2031], accessed July 24, 2025, <a href="https://extrapolate.com/es/food-beverage/functional-beverages-market-87387" target="_blank">https://extrapolate.com/es/food-beverage/functional-beverages-market-87387</a></li>
+            <li>Mercado de Jugo en México, Tamaño, Informe 2025-2034, accessed July 24, 2025, <a href="https://www.informesdeexpertos.com/informes/mercado-de-jugo-en-mexico" target="_blank">https://www.informesdeexpertos.com/informes/mercado-de-jugo-en-mexico</a></li>
+            <li>Estadísticas del mercado de bebidas saludables - THE FOOD TECH - Medio de noticias líder en la Industria de Alimentos y Bebidas, accessed July 24, 2025, <a href="https://thefoodtech.com/tendencias-de-consumo/estadisticas-del-mercado-de-bebidas-saludables/" target="_blank">https://thefoodtech.com/tendencias-de-consumo/estadisticas-del-mercado-de-bebidas-saludables/</a></li>
+            <li>Pronóstico del mercado de bebidas nutricionales, participación, estrategias, alcance, visión general., accessed July 24, 2025, <a href="https://www.databridgemarketresearch.com/es/reports/global-nutritional-beverages-market" target="_blank">https://www.databridgemarketresearch.com/es/reports/global-nutritional-beverages-market</a></li>
+            <li>La tendencia en bebidas funcionales conquista ... - THE FOOD TECH, accessed July 24, 2025, <a href="https://thefoodtech.com/tendencias-de-consumo/la-tendencia-por-bebidas-funcionales-conquista-al-mercado-en-2024/" target="_blank">https://thefoodtech.com/tendencias-de-consumo/la-tendencia-por-bebidas-funcionales-conquista-al-mercado-en-2024/</a></li>
+            <li>Características del consumidor en México | IPADE, accessed July 24, 2025, <a href="https://www.ipade.mx/newsmedia/gestion/caracteristicas-del-consumidor-en-mexico/" target="_blank">https://www.ipade.mx/newsmedia/gestion/caracteristicas-del-consumidor-en-mexico/</a></li>
+            <li>Impacto del bienestar físico y emocional en el consumo masivo de los hogares mexicanos, accessed July 24, 2025, <a href="https://www.kantar.com/latin-america/Inspiracion/Consumidor/2024-Worldpanel-Mexico-Impacto-del-bienestar-fisico-y-emocional-en-el-consumo-masivo" target="_blank">https://www.kantar.com/latin-america/Inspiracion/Consumidor/2024-Worldpanel-Mexico-Impacto-del-bienestar-fisico-y-emocional-en-el-consumo-masivo</a></li>
+            <li>Tendencias actuales en la industria de bebidas saludables - Julian Soler, accessed July 24, 2025, <a href="https://juliansoler.com/tendencias-actuales-en-la-industria-de-bebidas-saludables/" target="_blank">https://juliansoler.com/tendencias-actuales-en-la-industria-de-bebidas-saludables/</a></li>
+            <li>Mexicanos lideran dietas saludables en América Latina - NIQ, accessed July 24, 2025, <a href="https://nielseniq.com/global/es/insights/report/2016/8-de-cada-10-mexicanos-afirma-seguir-algun-tipo-de-dieta-restrictiva/" target="_blank">https://nielseniq.com/global/es/insights/report/2016/8-de-cada-10-mexicanos-afirma-seguir-algun-tipo-de-dieta-restrictiva/</a></li>
+            <li>La generación Z se preocupa por productos enfocados en la salud y bienestar: entrevista con NIQ México - THE FOOD TECH, accessed July 24, 2025, <a href="https://thefoodtech.com/tendencias-de-consumo/los-consumidores-de-la-generacion-z-se-preocupan-por-productos-enfocados-en-la-salud-y-bienestar-entrevista-con-niq-mexico/" target="_blank">https://thefoodtech.com/tendencias-de-consumo/los-consumidores-de-la-generacion-z-se-preocupan-por-productos-enfocados-en-la-salud-y-bienestar-entrevista-con-niq-mexico/</a></li>
+            <li>Mexico Acai Berry Market Size & Outlook, 2024-2030, accessed July 24, 2025, <a href="https://www.grandviewresearch.com/horizon/outlook/acai-berry-market/mexico" target="_blank">https://www.grandviewresearch.com/horizon/outlook/acai-berry-market/mexico</a></li>
+            <li>El mercado orgánico de Goji Berry ve a Global Surge a medida que aumenta la demanda de superalimentos - Market Research Intellect, accessed July 24, 2025, <a href="https://www.marketresearchintellect.com/es/blog/organic-goji-berry-market-sees-global-surge-as-superfood-demand-rises/" target="_blank">https://www.marketresearchintellect.com/es/blog/organic-goji-berry-market-sees-global-surge-as-superfood-demand-rises/</a></li>
+            <li>Tamaño del mercado de bayas de maqui y principales actores en 2030, accessed July 24, 2025, <a href="https://www.theinsightpartners.com/es/reports/maqui-berries-market" target="_blank">https://www.theinsightpartners.com/es/reports/maqui-berries-market</a></li>
+            <li>Tendencias de Sabores que Estamos Observando en 2025 ..., accessed July 24, 2025, <a href="https://www.glanbianutritionals.com/es-us/nutri-knowledge-center/insights/flavor-trends-were-watching" target="_blank">https://www.glanbianutritionals.com/es-us/nutri-knowledge-center/insights/flavor-trends-were-watching</a></li>
+            <li>Tendencias de Sabor para 2024 - enAlimentos, accessed July 24, 2025, <a href="https://enalimentos.lat/articulos/9691-tendencias-de-sabor-para-2024.html" target="_blank">https://enalimentos.lat/articulos/9691-tendencias-de-sabor-para-2024.html</a></li>
+            <li>Bebidas saludables, la demanda de los consumidores más jóvenes - THE FOOD TECH, accessed July 24, 2025, <a href="https://thefoodtech.com/tendencias-de-consumo/bebidas-saludables-la-demanda-de-los-consumidores-mas-jovenes/" target="_blank">https://thefoodtech.com/tendencias-de-consumo/bebidas-saludables-la-demanda-de-los-consumidores-mas-jovenes/</a></li>
+            <li>Informe de participación de mercado de bebidas funcionales 2023-2031, accessed July 24, 2025, <a href="https://www.theinsightpartners.com/es/reports/functional-beverages-market" target="_blank">https://www.theinsightpartners.com/es/reports/functional-beverages-market</a></li>
+            <li>Tamaño del mercado de bebidas funcionales, participación, crecimiento, tendencias, 2032, accessed July 24, 2025, <a href="https://www.fortunebusinessinsights.com/es/industry-reports/functional-beverages-market-101625" target="_blank">https://www.fortunebusinessinsights.com/es/industry-reports/functional-beverages-market-101625</a></li>
+            <li>Las 10 principales empresas de jugos y batidos - uFoodin, accessed July 24, 2025, <a href="https://ufoodin.com/es/top-10-juice-and-smoothie-companies/" target="_blank">https://ufoodin.com/es/top-10-juice-and-smoothie-companies/</a></li>
+            <li>refrescos y jugos mexicanos: tradición y sabor en cada sorbo - La Bartolina, accessed July 24, 2025, <a href="https://www.labartolina.com.mx/post/refrescos-y-jugos-mexicanos-tradici%C3%B3n-y-sabor-en-cada-sorbo" target="_blank">https://www.labartolina.com.mx/post/refrescos-y-jugos-mexicanos-tradici%C3%B3n-y-sabor-en-cada-sorbo</a></li>
+            <li>Jugos y Néctares en Walmart | Tu tienda en línea México, accessed July 24, 2025, <a href="https://super.walmart.com.mx/content/bebidas-y-licores/jugos-y-nectares/3680051_120033" target="_blank">https://super.walmart.com.mx/content/bebidas-y-licores/jugos-y-nectares/3680051_120033</a></li>
+            <li>Jugo Del Valle 100% Manzana 200ml - Chedraui, accessed July 24, 2025, <a href="https://www.chedraui.com.mx/jugo-del-valle-100-manzana-200ml-3682371/p" target="_blank">https://www.chedraui.com.mx/jugo-del-valle-100-manzana-200ml-3682371/p</a></li>
+            <li>11 Deliciosos jugos mexicanos - Abasto, accessed July 24, 2025, <a href="https://abasto.com/datos-utiles/11-deliciosos-jugos-mexicanos/" target="_blank">https://abasto.com/datos-utiles/11-deliciosos-jugos-mexicanos/</a></li>
+            <li>7 bebidas mexicanas que conquistan - THE FOOD TECH, accessed July 24, 2025, <a href="https://thefoodtech.com/tendencias-de-consumo/7-bebidas-mexicanas-que-conquistan/" target="_blank">https://thefoodtech.com/tendencias-de-consumo/7-bebidas-mexicanas-que-conquistan/</a></li>
+            <li>Qué es el asaí, cuáles son sus beneficios y cómo debe consumirse - Infobae, accessed July 24, 2025, <a href="https://www.infobae.com/mexico/2023/11/16/que-es-el-asai-cuales-son-sus-beneficios-y-como-debe-consumirse/" target="_blank">https://www.infobae.com/mexico/2023/11/16/que-es-el-asai-cuales-son-sus-beneficios-y-como-debe-consumirse/</a></li>
+            <li>'Superalimentos' latinoamericanos se abren camino en el mercado japonés - Forbes México, accessed July 24, 2025, <a href="https://forbes.com.mx/superalimentos-latinoamericanos-se-abren-camino-en-el-mercado-japones/" target="_blank">https://forbes.com.mx/superalimentos-latinoamericanos-se-abren-camino-en-el-mercado-japones/</a></li>
+            <li>¿El açaí solo se encuentra en Brasil? - Slofoodgroup, accessed July 24, 2025, <a href="https://www.slofoodgroup.com/es/blogs/recipes-stories/is-acai-only-found-in-brazil" target="_blank">https://www.slofoodgroup.com/es/blogs/recipes-stories/is-acai-only-found-in-brazil</a></li>
+            <li>Conoce los beneficios de las bayas de maqui, el superalimento que previene las arrugas, accessed July 24, 2025, <a href="https://www.hola.com/belleza/caraycuerpo/20171025101043/bayas-maqui-superalimento-antioxidante-piel/" target="_blank">https://www.hola.com/belleza/caraycuerpo/20171025101043/bayas-maqui-superalimento-antioxidante-piel/</a></li>
+            <li>Mexico Maqui Berry market overview 2024 - Tridge, accessed July 24, 2025, <a href="https://www.tridge.com/intelligences/maqui-berry/MX" target="_blank">https://www.tridge.com/intelligences/maqui-berry/MX</a></li>
+            <li>Propiedades y Beneficios de las Bayas: Maqui, Goji y Acai | MYPROTEIN™, accessed July 24, 2025, <a href="https://www.myprotein.es/thezone/nutricion/beneficios-de-las-bayas-goji-acai/" target="_blank">https://www.myprotein.es/thezone/nutricion/beneficios-de-las-bayas-goji-acai/</a></li>
+            <li>Bayas de goji, alimento poco conocido, pero muy beneficioso - Yahoo, accessed July 24, 2025, <a href="https://es-us.noticias.yahoo.com/bayas-goji-alimento-conocido-beneficioso-165508908.html" target="_blank">https://es-us.noticias.yahoo.com/bayas-goji-alimento-conocido-beneficioso-165508908.html</a></li>
+            <li>Canales de distribución - canainca, accessed July 24, 2025, <a href="https://www.canainca.org/index.php/la-industria/canales-de-distribucion" target="_blank">https://www.canainca.org/index.php/la-industria/canales-de-distribucion</a></li>
+            <li>Los canales de compra más importantes para el consumidor mexicano - Kantar, accessed July 24, 2025, <a href="https://www.kantar.com/latin-america/inspiracion/consumidor/2023-wp-mx-canales-de-compra-mas-importantes" target="_blank">https://www.kantar.com/latin-america/inspiracion/consumidor/2023-wp-mx-canales-de-compra-mas-importantes</a></li>
+            <li>Canales de compra cambia en el consumidor mexicano - THE FOOD TECH, accessed July 24, 2025, <a href="https://thefoodtech.com/industria-alimentaria-hoy/canales-de-compra-cambia-entre-consumidor-mexicano/" target="_blank">https://thefoodtech.com/industria-alimentaria-hoy/canales-de-compra-cambia-entre-consumidor-mexicano/</a></li>
+            <li>Jugo Frutos Rojos The Wow Fact 1.2L | Chedraui, accessed July 24, 2025, <a href="https://www.chedraui.com.mx/Jugo-Frutos-Rojos-The-Wow-Fact-12L-3806244/p" target="_blank">https://www.chedraui.com.mx/Jugo-Frutos-Rojos-The-Wow-Fact-12L-3806244/p</a></li>
+            <li>NORMA Oficial Mexicana NOM-251-SSA1-2009, Prácticas de higiene para el proceso de alimentos, bebidas o suplementos alimenticios - DOF, accessed July 24, 2025, <a href="https://www.dof.gob.mx/normasOficiales/3980/salud/salud.htm" target="_blank">https://www.dof.gob.mx/normasOficiales/3980/salud/salud.htm</a></li>
+            <li>Es apremiante la actualización en la regulación de suplementos alimenticios: Entrevista con Juan Pablo Fueyo - THE FOOD TECH, accessed July 24, 2025, <a href="https://thefoodtech.com/normatividad-y-certificaciones/es-apremiante-la-actualizacion-en-la-regulacion-de-suplementos-alimenticios-entrevista-con-juan-pablo-fueyo/" target="_blank">https://thefoodtech.com/normatividad-y-certificaciones/es-apremiante-la-actualizacion-en-la-regulacion-de-suplementos-alimenticios-entrevista-con-juan-pablo-fueyo/</a></li>
+            <li>EducaPRiS - 13/01/2022 - Suplementos alimenticios - clasificación y publicidad - YouTube, accessed July 24, 2025, <a href="https://www.youtube.com/watch?v=BKPEN2B04HY&pp=0gcJCfwAo7VqN5tD" target="_blank">https://www.youtube.com/watch?v=BKPEN2B04HY&pp=0gcJCfwAo7VqN5tD</a></li>
+            <li>ACUERDO por el que se determinan los aditivos y coadyuvantes en alimentos, bebidas y suplementos alimenticios, su uso y disposiciones sanitarias - DOF, accessed July 24, 2025, <a href="https://www.dof.gob.mx/nota_detalle_popup.php?codigo=5259470" target="_blank">https://www.dof.gob.mx/nota_detalle_popup.php?codigo=5259470</a></li>
+            <li>GUÍA PRÁCTICA PARA ENTENDER LA FASE II - AMyD, accessed July 24, 2025, <a href="https://amyd.quimica.unam.mx/pluginfile.php/17867/mod_resource/content/1/The%20Food%20Tech.pdf" target="_blank">https://amyd.quimica.unam.mx/pluginfile.php/17867/mod_resource/content/1/The%20Food%20Tech.pdf</a></li>
+            <li>Manual de la MODIFICACIÓN a la Norma Oficial ... - Gob MX, accessed July 24, 2025, <a href="https://www.gob.mx/cms/uploads/attachment/file/653733/MANUAL_NOM051_v16.pdf" target="_blank">https://www.gob.mx/cms/uploads/attachment/file/653733/MANUAL_NOM051_v16.pdf</a></li>
+        </ul>
+    </section>
+
+        </main>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+            return label.join(' ');
+        }
+        return label;
+    };
+
+    const commonChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    font: {
+                        size: 12,
+                        family: 'Inter'
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    title: tooltipTitleCallback
+                },
+                bodyFont: {
+                    family: 'Inter'
+                },
+                titleFont: {
+                    family: 'Inter'
+                }
+            }
+        }
+    };
+
+    const wrapLabel = (label) => {
+        if (label.length <= 16) return label;
+        const words = label.split(' ');
+        let lines = [];
+        let currentLine = '';
+        words.forEach(word => {
+            if ((currentLine + ' ' + word).length > 16 && currentLine.length > 0) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine = currentLine ? currentLine + ' ' + word : word;
+            }
+        });
+        lines.push(currentLine);
+        return lines;
+    };
+
+    new Chart(document.getElementById('marketGrowthChart'), {
+        type: 'line',
+        data: {
+            labels: ['2024', '2034'],
+            datasets: [{
+                label: 'Mercado de Jugos (México)',
+                data: [2815000000, 4203000000],
+                borderColor: '#72DDC3',
+                backgroundColor: '#72DDC3',
+                tension: 0.1,
+                borderWidth: 3
+            }, {
+                label: 'Mercado Funcional (Global)',
+                data: [243360000000, 448970000000],
+                borderColor: '#A3A1FB',
+                backgroundColor: '#A3A1FB',
+                tension: 0.1,
+                borderWidth: 3
+            }]
+        },
+        options: {
+            ...commonChartOptions,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return '$' + (value / 1000000000) + 'B'; // Convert to billions
+                        }
+                    }
+                }
+            },
+            plugins: {
+                ...commonChartOptions.plugins,
+                tooltip: {
+                    ...commonChartOptions.plugins.tooltip,
+                    callbacks: {
+                        ...commonChartOptions.plugins.tooltip.callbacks,
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact' }).format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('consumerMotivationChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Deseo Proactivo de Salud', 'Alergias / Sensibilidad'],
+            datasets: [{
+                data: [80, 20],
+                backgroundColor: ['#72DDC3', '#FFB86F'],
+                borderColor: '#FFFFFF',
+                borderWidth: 4,
+            }]
+        },
+        options: {
+            ...commonChartOptions,
+            cutout: '60%'
+        }
+    });
+
+    new Chart(document.getElementById('dietsChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Vegetarianos (19%)', 'Veganos (9%)', 'Libres de Lácteos (24%)'],
+            datasets: [{
+                data: [19, 9, 24],
+                backgroundColor: ['#72DDC3', '#FFB86F', '#FF758C'],
+                borderColor: '#FFFFFF',
+                borderWidth: 4,
+            }]
+        },
+        options: {
+            ...commonChartOptions,
+        }
+    });
+
+    const priceLabels = ['Jugo Masivo (Jumex)', 'Jugo Funcional (Frutos de Vida)', wrapLabel('Marca Propia Premium (Marketside)'), 'Kombucha (Mándolin)'];
+    new Chart(document.getElementById('priceBenchmarkChart'), {
+        type: 'bar',
+        data: {
+            labels: priceLabels,
+            datasets: [{
+                label: 'Precio por Litro (MXN)',
+                data: [38, 52, 79, 157],
+                backgroundColor: ['#72DDC3', '#FFB86F', '#FF758C', '#A3A1FB'],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            ...commonChartOptions,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value;
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>
